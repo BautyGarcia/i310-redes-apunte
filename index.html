@@ -375,6 +375,7 @@ archivos</a>.</li>
 <li><a href="#global"><b>Todo junto.</b></a> Qué pasa en la red desde que escribís una dirección en el navegador
 hasta que ves la página.</li>
 </ol>
+<p>Si en este mapa aparecen siglas que todavía no conocés (OSI, TCP, IP, DNS…), no te preocupes: cada una se explica, con su nombre completo, en la parte donde aparece por primera vez.</p>
 <p>Cada parte arranca con un recuadro «Dónde estamos» y termina con «Lo que sigue». Al final de cada
 parte están las preguntas del profesor, los simulacros y los ejercicios. Hacelos después de leer, no antes.</p>
 
@@ -608,7 +609,7 @@ variantes que agregan transiciones para que el receptor se sincronice:</p>
 <ul>
 <li><b>NRZ</b> (<i>Non-Return to Zero</i>): un nivel por bit, alto para 1 y bajo para 0. Simple, pero con muchos bits iguales seguidos no hay transiciones.</li>
 <li><b>NRZI</b> (<i>NRZ Inverted</i>): un 1 provoca un cambio de nivel al comienzo del bit; un 0 no cambia nada. Arregla las rachas de unos, no las de ceros.</li>
-<li><b>Manchester</b>: siempre hay un cambio en la mitad de cada bit (de bajo a alto es un 1, de alto a bajo es un 0). El receptor nunca pierde el ritmo. Lo usa la Ethernet original de 10 Mbps. El costo: la señal cambia el doble de rápido.</li>
+<li><b>Manchester</b>: siempre hay un cambio en la mitad de cada bit (de bajo a alto es un 1, de alto a bajo es un 0). El receptor nunca pierde el ritmo. Lo usa la Ethernet original de 10 Mbps (Ethernet es la tecnología de red local más común; la vemos en la <a href="#u1c">parte C</a>). El costo: la señal cambia el doble de rápido.</li>
 <li><b>AMI bipolar</b> (<i>Alternate Mark Inversion</i>): el 0 es 0 V y los 1 alternan entre positivo y negativo.</li>
 </ul>
 <p>No hace falta memorizar los dibujos; sí saber que la <b>codificación es tarea de la capa física</b> y que existe
@@ -620,7 +621,7 @@ para que el receptor pueda reconstruir los bits y mantenerse sincronizado.</p>
 <b>no guiados</b>, donde viaja por el aire:</p>
 <ul>
 <li><b>Cable coaxial</b> (grueso y fino): el de la televisión por cable. Las primeras Ethernet eran coaxiales.</li>
-<li><b>Pares trenzados de cobre</b>: UTP (<i>Unshielded Twisted Pair</i>, sin blindaje) y STP (<i>Shielded</i>, blindado). El cable de red común de una oficina. Se trenzan para que el ruido afecte por igual a los dos hilos y se cancele.</li>
+<li><b>Pares trenzados de cobre</b>: UTP (<i>Unshielded Twisted Pair</i>, sin blindaje) y STP (<i>Shielded Twisted Pair</i>, blindado; no confundir con el STP de los switches, que veremos en la parte C). El cable de red común de una oficina. Se trenzan para que el ruido afecte por igual a los dos hilos y se cancele.</li>
 <li><b>Fibra óptica</b> (multimodo y monomodo): pulsos de luz por un hilo de vidrio. Enorme capacidad, casi inmune a interferencias, llega mucho más lejos.</li>
 <li><b>Inalámbrico</b>: ondas de radio (WiFi, celular, satélite). Cómodo, pero el aire es un medio compartido y ruidoso.</li>
 </ul>
@@ -783,7 +784,7 @@ compartan un mismo enlace. Ocurre <b>en los enlaces</b>. Hay cuatro tipos:</p>
 transmitiendo, usa el megabit entero.</p>
 <p>El tráfico de datos es a <b>ráfagas</b>: abrís una página (mucho tráfico durante un segundo) y después la leés un
 minuto (nada). Reservar capacidad fija para cada usuario es desperdiciarla casi todo el tiempo. Por eso
-<span class="kw">IP (Internet) y las LAN usan multiplexado STDM</span>. La contracara: si muchos transmiten a la vez,
+<span class="kw">IP (Internet) y las LAN usan multiplexado STDM</span> (IP es el protocolo sobre el que funciona Internet, lo vemos en la <a href="#u1d">parte D</a>; una LAN, <i>Local Area Network</i>, es una red local como la de tu casa o tu oficina, y la vemos en la <a href="#u1c">parte C</a>). La contracara: si muchos transmiten a la vez,
 no alcanza y alguien tiene que esperar. Ese «esperar» va a ser el tema de las próximas secciones.</p></div>
 
 <!-- ================================================================ -->
@@ -885,7 +886,7 @@ veremos que el control de errores va al final). Entonces la forma natural de tra
 completo, guardarlo en memoria, y recién después reenviarlo</b>.</p>
 
 <div class="caja def"><p class="caja-tit">Definición · Store and Forward (S&amp;F)</p>
-<p>Un IS que hace <span class="kw">Store and Forward</span> recibe el paquete (o la trama) completo, lo
+<p>Un IS que hace <span class="kw">Store and Forward</span> recibe el paquete (o la trama, que es como se llama el paquete en una red local; lo vemos en la <a href="#u1b">parte B</a>) completo, lo
 <b>almacena</b> en memoria y después lo <b>reenvía</b>. Consecuencia directa, según la cátedra:
 S&amp;F ⇒ <span class="kw">packet queues</span> ⇒ <span class="kw">packet delay</span> ⇒
 <span class="kw">packet loss</span>.</p></div>
@@ -951,7 +952,7 @@ paquete ni de los Mbps. Un enlace más rápido acorta la transmisión, pero no l
 cruzar el océano por un cable de 1 Mbps que por uno de 100 Gbps.</p></div>
 
 <h3 id="u1a-perdidas">Por qué se pierden paquetes</h3>
-<p>Hay dos causas, y conviene distinguirlas porque más adelante TCP las va a tratar distinto:</p>
+<p>Hay dos causas, y conviene distinguirlas porque más adelante TCP (el protocolo que garantiza que los datos lleguen completos, <a href="#u8">unidad 8</a>) las va a tratar distinto:</p>
 <ul>
 <li><b>Interferencias / ruido</b>: la señal llega deformada, el paquete tiene errores y se descarta.</li>
 <li><b>Congestión severa</b>: la cola del router se llenó y el paquete se tira (<i>drop</i>). Congestión suave es
@@ -995,7 +996,7 @@ El receptor hace la misma cuenta con lo que recibió; si no le da lo mismo, hubo
 <code>1011001</code> + paridad <code>0</code> (cuatro unos, par) y uno de los bits cambia, la cuenta da impar y se
 detecta. Pero si cambian dos bits, la paridad vuelve a dar par y el error pasa sin detectarse: no sirve contra ráfagas.</li>
 <li><b>Checksum</b>: se suman los datos en bloques (por ejemplo de 16 bits) y se manda el resultado. Barato de
-calcular; es el que usan IP, UDP y TCP.</li>
+calcular; es el que usan IP, UDP y TCP (protocolos que vemos más adelante).</li>
 <li><b>CRC</b> (<i>Cyclic Redundancy Check</i>): una división polinómica de los bits. Más costoso pero mucho más
 potente: detecta casi todos los errores en ráfaga. Lo usa Ethernet al final de cada trama.</li>
 </ul>
@@ -1386,7 +1387,7 @@ mamushka: cada capa mete el paquete de la de arriba dentro de su propia caja.</p
 se <span class="kw">desencapsula</span> la PDU de capa n.</p></div>
 
 <div class="caja ejemplo"><p class="caja-tit">Ejemplo · cuánto «pesan» los envoltorios</p>
-<p>Querés mandar 100 bytes de texto. TCP le agrega un header de 20 bytes (120). IP le agrega otros 20
+<p>Adelantemos tres nombres que enseguida vamos a ubicar en su capa: TCP (transporte), IP (red) y Ethernet (enlace). Querés mandar 100 bytes de texto. TCP le agrega un header de 20 bytes (120). IP le agrega otros 20
 (140). Ethernet le agrega 14 de header y 4 de trailer (158). Por el cable salen 158 bytes para llevar
 100 de datos: el resto es la información de control que cada capa necesita para hacer su trabajo.</p></div>
 
@@ -1511,7 +1512,7 @@ capa vive cada uno y para qué sirve en una frase; cada uno tiene su parte más 
 <li><b>Aplicación:</b> <b>DNS</b> (<i>Domain Name System</i>: traduce nombres como www.udesa.edu.ar a
 direcciones; <a href="#u3">parte DNS</a>), <b>HTTP</b> (<i>HyperText Transfer Protocol</i>: la web), <b>SMTP</b>
 (<i>Simple Mail Transfer Protocol</i>: enviar mail), <b>POP</b> e <b>IMAP</b> (<i>Post Office Protocol</i>,
-<i>Internet Message Access Protocol</i>: leer el mail), SNMP, DHCP.</li>
+<i>Internet Message Access Protocol</i>: leer el mail), SNMP (<i>Simple Network Management Protocol</i>: gestión de equipos de red), DHCP (<i>Dynamic Host Configuration Protocol</i>: configuración automática de cada máquina).</li>
 <li><b>Transporte:</b> <b>TCP</b> (<i>Transmission Control Protocol</i>: entrega confiable y ordenada) y
 <b>UDP</b> (<i>User Datagram Protocol</i>: entrega simple y rápida, sin garantías).</li>
 <li><b>Interred:</b> <b>IP</b> (<i>Internet Protocol</i>: direcciones y ruteo), <b>ARP</b> (<i>Address
@@ -3212,7 +3213,7 @@ números hay que saberlos de memoria.</p>
 <tr><td><b>SMTP</b></td><td>TCP</td><td><b>25</b></td><td><a href="#u4">Mail</a></td></tr>
 <tr><td>POP3</td><td>TCP</td><td>110</td><td><a href="#u4">Mail</a></td></tr>
 <tr><td>IMAP4</td><td>TCP</td><td>143</td><td><a href="#u4">Mail</a></td></tr>
-<tr><td>IMAP4 over TLS/SSL</td><td>TCP</td><td>993</td><td><a href="#u4">Mail</a></td></tr>
+<tr><td>IMAP4 over TLS/SSL (IMAP cifrado; TLS, <i>Transport Layer Security</i>, se explica en HTTP)</td><td>TCP</td><td>993</td><td><a href="#u4">Mail</a></td></tr>
 <tr><td>SSH</td><td>TCP</td><td>22</td><td><a href="#u2b">TELNET, SSH, FTP</a></td></tr>
 <tr><td>SNMP</td><td>UDP</td><td>161, 162</td><td><a href="#u7">UDP</a></td></tr>
 </tbody></table></div>
@@ -5678,7 +5679,7 @@ firmada por Alice, pero eso lo lee el destinatario, no el cartero. En el mail pa
 <tbody>
 <tr><td><span class="kw">Envelope</span></td><td>El sobre</td><td>El <b>MTA</b> (<i>Mail Transfer Agent</i>: los servidores que transportan), para entregar</td><td><code>MAIL From:&lt;joseperez@fi.uba.ar&gt;</code> y <code>RCPT To:&lt;juanlopez@uyr.com.ar&gt;</code>. Sintaxis según el RFC 821.</td></tr>
 <tr><td><span class="kw">Headers</span></td><td>El encabezado de la carta</td><td>Los <b>MUA</b> (las mailtools), para mostrarlo</td><td>Received, Message-Id, From, Date, Reply-To, To, Subject… Cada uno con el formato <code>Nombre: valor</code>. Los que empiezan con <code>X-</code> (X-Mailer, X-Phone) son particulares de cada MUA. Según el RFC 822.</td></tr>
-<tr><td><span class="kw">Body</span></td><td>El texto de la carta</td><td>El usuario</td><td>El contenido, en líneas de <b>NVT ASCII (ASCII de 7 bits)</b>. Según el RFC 822.</td></tr>
+<tr><td><span class="kw">Body</span></td><td>El texto de la carta</td><td>El usuario</td><td>El contenido, en líneas de <b>NVT ASCII (ASCII de 7 bits)</b>. ASCII (<i>American Standard Code for Information Interchange</i>) es el código de caracteres básico: letras sin acentos, números y signos. NVT es el formato estándar de terminal de TELNET (lo vemos en la <a href="#u2b">parte de TELNET</a>). Según el RFC 822.</td></tr>
 </tbody></table></div>
 <p>Con el comando DATA se mandan primero los <b>headers</b>, después <b>una línea en blanco</b> y después el <b>body</b>. Al conjunto
 headers + body se lo llama <span class="kw">content</span>. El envelope no forma parte del content: lo mandan los comandos SMTP.</p>
@@ -5727,7 +5728,7 @@ principales:</p>
 <tr><td><b>audio</b></td><td>mpeg (mp3), basic, ogg</td></tr>
 <tr><td><b>video</b></td><td>mp4, mpeg, quicktime</td></tr>
 <tr><td><b>application</b></td><td>pdf, octet-stream (binario genérico), json, zip, msword, x-www-form-urlencoded</td></tr>
-<tr><td><b>multipart</b></td><td>mixed (texto + adjuntos), alternative (la misma información en texto y en HTML), related, form-data</td></tr>
+<tr><td><b>multipart</b></td><td>mixed (texto + adjuntos), alternative (la misma información en texto y en HTML, el lenguaje de las páginas web), related, form-data</td></tr>
 <tr><td><b>message</b></td><td>rfc822 (un mail metido dentro de otro), partial, external-body</td></tr>
 </tbody></table></div>
 <p>Un mail con un adjunto es <code>multipart/mixed</code>: el body se divide en partes separadas por una línea marcadora
@@ -6051,7 +6052,7 @@ foto que subís) o solo saber si un recurso cambió sin bajarlo. Por eso la prim
 respuesta suele ser la salida de ese programa. Ejemplo típico: mandás un formulario a <code>/procesar-formulario</code>. Los datos
 van en el body, descritos con <code>Content-Type</code> y <code>Content-Length</code>.</li>
 <li>En <b>PUT</b>, la URI <b>identifica a los propios datos</b>: «guardá esto en <code>/api/usuarios/42</code>». Y la semántica
-cambia: POST está orientado a la <b>creación</b> de contenidos y PUT a la <b>actualización</b> (el Update de una API REST).</li>
+cambia: POST está orientado a la <b>creación</b> de contenidos y PUT a la <b>actualización</b> (el Update de una API REST: una interfaz para que otros programas creen, lean, actualicen y borren recursos usando HTTP).</li>
 </ul>
 <pre>POST /procesar-formulario HTTP/1.1          PUT /api/usuarios/42 HTTP/1.1
 Host: www.ejemplo.com                       Host: www.ejemplo.com
@@ -6223,7 +6224,7 @@ viene después espera la retransmisión, aunque sea de otra transacción. Según
 HTTP: los flujos de HTTP son <b>cortos y por ráfagas</b>, y TCP fue pensado para flujos <b>duraderos y estables</b>.</p>
 <p>La diferencia clave de HTTP/3 es que se ejecuta sobre <span class="kw">QUIC</span> (<i>Quick UDP Internet Connections</i>) en lugar de
 TCP. QUIC corre <b>sobre UDP</b> y reimplementa lo que necesita: soporta <b>conexiones multiplexadas</b> e independientes entre dos
-extremos (una pérdida solo frena a su propio flujo), provee <b>seguridad equivalente a TLS</b>, reduce la <b>latencia de conexión y de
+extremos (una pérdida solo frena a su propio flujo), provee <b>seguridad equivalente a TLS</b> (<i>Transport Layer Security</i>, el cifrado de HTTPS, que vemos al final de esta parte), reduce la <b>latencia de conexión y de
 transporte</b> e incluye <b>estimación de ancho de banda</b> en cada dirección para evitar la congestión.</p>
 <div class="tabla-wrap"><table>
 <thead><tr><th>Versión</th><th>Año / RFC</th><th>Qué agrega</th><th>Transporte</th></tr></thead>
@@ -6457,8 +6458,8 @@ RIPE, LACNIC, ARIN…) se fueron quedando sin direcciones: el <b>agotamiento de 
 <pre>GET / HTTP/1.1            GET / HTTP/1.1
 Host: www.cliente1.com    Host: www.cliente2.net</pre>
 <p><b>d)</b> <b>Virtual hosting por nombre</b> (HTTP 1.1): muchos sitios comparten <b>una sola IP</b>. Los dos FQDN resuelven a la misma
-IP y el servidor elige el sitio por el header <code>Host:</code>. (Para HTTPS el equivalente se llama SNI y manda el nombre en el
-handshake TLS). Otras ayudas al problema de direcciones, que se ven después del parcial: NAT e IPv6.</p>
+IP y el servidor elige el sitio por el header <code>Host:</code>. (Para HTTPS el equivalente se llama SNI, <i>Server Name Indication</i>, y manda el nombre en el
+handshake TLS). Otras ayudas al problema de direcciones, que se ven después del parcial: NAT (<i>Network Address Translation</i>: varias máquinas comparten una misma IP pública) e IPv6 (direcciones de 128 bits).</p>
 </div></details>
 
 <div class="enunciado"><p class="caja-tit">Guía UT2 · Ej 12 · Intensidad de tráfico (Kurose 1.4.2)</p>
@@ -8198,7 +8199,7 @@ Ante un timeout, ssthresh = cwnd / <input class="h" data-a="2|dos"> y cwnd = 1 M
 recovery, RTO, RTT, segmento, start, Window</p>
 </div>
 
-<p><b>Lo que sigue.</b> Con TCP dominado, el resto del parcial son las aplicaciones que corren encima y el
+<p><b>Lo que sigue.</b> Con los dos talleres hechos, queda el cierre de la historia: el
 integrador, que junta todo en un solo recorrido: desde que la máquina pide su IP hasta que se cierra la conexión
 HTTP (<a href="#global">Integrador</a>).</p>
 </section>
