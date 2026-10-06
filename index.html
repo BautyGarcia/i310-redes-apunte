@@ -3838,6 +3838,43 @@ cada una, y si hay dos hojas con el mismo número, una sobra.</p>
 motivos. Primero, TCP es un flujo de bytes, y lo que hay que reconstruir del otro lado es justamente ese flujo, byte por byte. Segundo,
 el tamaño de los segmentos no es fijo (depende de cuánto escribe la aplicación y de cuánto deja mandar la ventana, que vamos a ver
 después). Si los números fueran de segmentos, un segmento retransmitido o recortado de otra manera no se podría ubicar.</p>
+<p><b>¿Y por qué el header lleva un solo número?</b> Porque no hace falta más. Si cada byte tiene su número y los bytes de
+un segmento son consecutivos, alcanza con escribir el número del <b>primero</b>: el resto se deduce. Un segmento con
+SN = 1000 que trae 500 bytes contiene los bytes 1000, 1001, 1002… hasta el 1499. Es como el índice de un libro: dice
+«Capítulo 3 → página 45». Las que están numeradas son las páginas; el capítulo se identifica por su primera página, pero
+nadie diría que se numeran los capítulos.</p>
+<figure class="fig"><div class="lamina">
+<svg class="dib" viewBox="0 0 720 150" role="img" aria-label="Flujo de bytes numerados dividido en segmentos">
+<g font-family="IBM Plex Mono, monospace" font-size="12" fill="currentColor">
+<text x="10" y="20">flujo de bytes (cada byte tiene su número)</text>
+</g>
+<g stroke="currentColor" stroke-width="1" fill="none">
+<rect x="10" y="35" width="350" height="34" stroke="var(--accent)" stroke-width="2"/>
+<rect x="360" y="35" width="210" height="34" stroke-width="2"/>
+<rect x="570" y="35" width="140" height="34" stroke="var(--accent)" stroke-width="2"/>
+</g>
+<g stroke="currentColor" stroke-width="0.6" opacity="0.45">
+<path d="M45,35v34M80,35v34M115,35v34M150,35v34M185,35v34M220,35v34M255,35v34M290,35v34M325,35v34M395,35v34M430,35v34M465,35v34M500,35v34M535,35v34M605,35v34M640,35v34M675,35v34"/>
+</g>
+<g font-family="IBM Plex Mono, monospace" font-size="11.5" fill="currentColor" text-anchor="middle">
+<text x="185" y="57">bytes 1000 … 1499</text>
+<text x="465" y="57">bytes 1500 … 1799</text>
+<text x="640" y="57">1800 … 1999</text>
+<text x="185" y="95" fill="var(--accent)" font-weight="600">segmento 1: SN = 1000, 500 B</text>
+<text x="465" y="95" font-weight="600">segmento 2: SN = 1500, 300 B</text>
+<text x="640" y="95" fill="var(--accent)" font-weight="600">seg. 3: SN = 1800</text>
+<text x="360" y="130">el header solo lleva el número del primer byte; los demás se deducen</text>
+</g>
+</svg></div>
+<figcaption>Se numeran los bytes; el SN de cada segmento es la «etiqueta» de su primer byte. Por eso los SN saltan 500, 300…, y no 1, 2, 3.</figcaption></figure>
+<p>La prueba de que no son números de segmento es que avanzan a los saltos: 1000, 1500, 1800. Si fueran números de
+segmento irían 1, 2, 3. Y todo lo demás de TCP también habla en bytes:</p>
+<ul>
+<li><b>El ACK</b>: «AN = 1800» quiere decir «tengo todo hasta el byte 1799, mandame desde el 1800», no «recibí dos segmentos».</li>
+<li><b>La ventana</b>: «W = 4000» quiere decir «podés mandarme 4000 bytes más», vengan en los segmentos que vengan.</li>
+<li><b>La retransmisión puede reempacar</b>: si se perdieron los segmentos 2 y 3, TCP puede reenviar los bytes 1500–1999 en
+<b>un solo</b> segmento con SN = 1500. Con números de segmento fijos, eso sería imposible.</li>
+</ul>
 <div class="caja catedra"><p class="caja-tit">Así lo dice la cátedra</p>
 <p>Cada <span class="kw">byte</span> del data stream es identificado con un número de secuencia de <span class="kw">32 bits</span>.
 El <b>SN</b> (<i>Sequence Number</i>) de un segmento indica el número de secuencia del <span class="kw">primer byte</span> contenido en el segmento.
@@ -3856,7 +3893,9 @@ por haber ido por caminos distintos), los datos quedan en orden. Si un segmento 
 se descarta</b>: esas posiciones ya estaban ocupadas.</p></div>
 </div>
 <div class="caja trampa"><p class="caja-tit">Trampa · el SN no es «número de segmento»</p>
-<p>El siguiente SN es SN + DL, no SN + 1. Si un segmento con SN = 1000 lleva 500 bytes, contiene los bytes 1000 a 1499 y el próximo empieza en 1500.</p></div>
+<p>«Se numeran los <b>octetos</b> (bytes), no los segmentos». El SN es el número del primer byte que lleva el segmento, y el
+siguiente SN es <b>SN + DL</b>, no SN + 1. Única excepción: el SYN y el FIN no llevan datos pero <b>consumen un número</b>
+cada uno, como si fueran un byte (lo vemos en <a href="#u8-conexion">la conexión</a>).</p></div>
 <p>La numeración no arranca en 0. Cada extremo elige un número inicial al abrir la conexión. Lo vemos en
 <a href="#u8-conexion">la conexión</a>, donde se explica por qué.</p>
 <p>Con los números resolvimos el desorden y los duplicados. Falta lo más grave: los segmentos que <b>no llegan</b>, o que llegan rotos.</p>
