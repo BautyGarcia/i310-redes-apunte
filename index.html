@@ -302,6 +302,16 @@ svg.dib{max-width:100%; height:auto}
 /* láminas: en modo oscuro siguen al tema (los SVG usan currentColor) */
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --plate:#161E26; --plate-rule:#26313C; } }
 :root[data-theme="dark"]{ --plate:#161E26; --plate-rule:#26313C; }
+
+/* repaso final */
+.cloze-total{display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin:18px 0; padding:12px 14px;
+  border:1px dashed var(--cloze); border-radius:6px; background:var(--surface)}
+.cloze-total button{font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+  padding:7px 11px; border-radius:5px; cursor:pointer; border:1px solid var(--cloze); background:var(--surface);
+  color:var(--cloze); font-weight:600}
+.cloze-total button.prim{background:var(--cloze); color:#fff}
+.cloze-total .score{font-family:var(--mono); font-size:13px; color:var(--ink); font-weight:600}
+.cloze .tema{font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3); margin:0 0 4px}
 </style></head><body>
 <div id="prog"></div>
 <div class="shell">
@@ -310,7 +320,7 @@ svg.dib{max-width:100%; height:auto}
     <h2>Apunte para el parcial</h2>
     <div class="bajar"><button type="button" onclick="window.print()">Imprimir / guardar PDF</button>
     <p>Al imprimir se despliegan todas las respuestas.</p></div>
-    <ul class="nav-lista"><li class="nav-parte"><a class="nav-h" href="#inicio"><span class="nav-et">Antes de empezar</span><span class="nav-t">El parcial, por dentro</span></a><ul class="nav-subs"><li><a href="#inicio-historia">La historia que vamos a contar</a></li><li><a href="#inicio-estructura">Estructura y puntajes</a></li><li><a href="#inicio-reglas">Las reglas que importan</a></li><li><a href="#inicio-formato">Cómo es una consigna de completar</a></li><li><a href="#inicio-plan">Plan de estudio para los días que quedan</a></li></ul></li><li class="nav-parte"><a class="nav-h" href="#u1a"><span class="nav-et">Unidad 1 · parte A</span><span class="nav-t">Cómo se comunican dos computadoras</span></a><ul class="nav-subs"><li><a href="#u1a-para-que">Para qué existe una red</a></li><li><a href="#u1a-protocolo">Hablar sin memoria compartida: el protocolo</a></li><li><a href="#u1a-bits">Del bit a la señal</a></li><li><a href="#u1a-capacidad">Cuánto entra por un canal: capacidad</a></li><li><a href="#u1a-muchas">De dos máquinas a miles: hacen falta intermediarios</a></li><li><a href="#u1a-multiplexado">Compartir un enlace: multiplexado</a></li><li><a href="#u1a-conmutacion">Compartir caminos: conmutación</a></li><li><a href="#u1a-sf">Store and forward: guardar y reenviar</a></li><li><a href="#u1a-delay">Lo que cuesta compartir: delay, jitter y pérdidas</a></li><li><a href="#u1a-errores">Cuando los bits llegan mal: errores</a></li><li><a href="#u1a-tamanos">Redes chicas y redes grandes</a></li><li><a href="#u1a-sigue">Lo que sigue</a></li><li><a href="#u1a-resumen">En resumen</a></li><li><a href="#u1a-preguntas">Lo que te van a preguntar</a></li><li><a href="#u1a-simulacros">Simulacros</a></li><li><a href="#u1a-guia">Ejercicios de la Guía UT1</a></li></ul></li><li class="nav-parte"><a class="nav-h" href="#u1b"><span class="nav-et">Unidad 1 · parte B</span><span class="nav-t">Capas: OSI y TCP/IP</span></a><ul class="nav-subs"><li><a href="#u1b-problema">El problema: demasiadas cosas para resolver a la vez</a></li><li><a href="#u1b-idea">La idea: cada capa resuelve un problema y le da un servicio a la de arriba</a></li><li><a href="#u1b-vocabulario">El vocabulario de las capas</a></li><li><a href="#u1b-estandares">Por qué hacen falta estándares</a></li><li><a href="#u1b-osi">El modelo OSI: siete capas, siete problemas</a></li><li><a href="#u1b-tcpip">TCP/IP: la arquitectura que usa Internet</a></li><li><a href="#u1b-nombres">Cómo se llama la PDU en cada capa</a></li><li><a href="#u1b-direcciones">Cada capa tiene su propia forma de dirección</a></li><li><a href="#u1b-tres-niveles">Tres niveles de comunicación</a></li><li><a href="#u1b-devices">Hasta qué capa «abre» cada dispositivo</a></li><li><a href="#u1b-internet">Internet: una red de redes</a></li><li><a href="#u1b-resumen">En resumen</a></li><li><a href="#u1b-preguntas">Lo que te van a preguntar</a></li><li><a href="#u1b-simulacros">Simulacros</a></li><li><a href="#u1b-guia">Ejercicios de la Guía UT1</a></li></ul></li><li class="nav-parte"><a class="nav-h" href="#u1c"><span class="nav-et">Unidad 1 · parte C</span><span class="nav-t">Redes locales: Ethernet, switches, WiFi</span></a><ul class="nav-subs"><li><a href="#u1c-dos-capas">Las dos capas de abajo, en concreto</a></li><li><a href="#u1c-wan-lan">WAN y LAN: el medio compartido lo cambia todo</a></li><li><a href="#u1c-ethernet">Ethernet: muchas máquinas en un mismo cable</a></li><li><a href="#u1c-hub">Del cable coaxil al hub</a></li><li><a href="#u1c-switch">El switch: un dispositivo que aprende</a></li><li><a href="#u1c-stp">Caminos redundantes, loops y STP</a></li><li><a href="#u1c-wifi">WiFi: la red local por el aire</a></li><li><a href="#u1c-resumen">En resumen</a></li><li><a href="#u1c-preguntas">Lo que te van a preguntar</a></li><li><a href="#u1c-simulacros">Simulacros</a></li></ul></li><li class="nav-parte"><a class="nav-h" href="#u1d"><span class="nav-et">Unidad 1 · parte D</span><span class="nav-t">Interconectar redes: IP, ARP, ICMP</span></a><ul class="nav-subs"><li><a href="#u1d-problema">Una LAN no alcanza</a></li><li><a href="#u1d-ip">IP: una capa por encima de todas las redes</a></li><li><a href="#u1d-direcciones">Direcciones que dicen dónde estás</a></li><li><a href="#u1d-ruteo">Ruteo: decidir hacia dónde va cada datagrama</a></li><li><a href="#u1d-fragmentacion">Fragmentación: cuando el datagrama no entra</a></li><li><a href="#u1d-arp">ARP: de la dirección IP a la dirección MAC</a></li><li><a href="#u1d-icmp">ICMP: cómo se entera el origen de que algo falló</a></li><li><a href="#u1d-resumen">En resumen</a></li><li><a href="#u1d-preguntas">Lo que te van a preguntar</a></li><li><a href="#u1d-simulacros">Simulacros</a></li><li><a href="#u1d-ejercicios">Ejercicios</a></li></ul></li><li class="nav-parte"><a class="nav-h" href="#u2"><span class="nav-et">Unidad 2 · 0.5 pt</span><span class="nav-t">Procesos que se hablan: IPC y ports</span></a><ul class="nav-subs"><li><a href="#u2-para-que">¿Para qué existe todo esto?</a></li><li><a href="#u2-end-to-end">Quién participa de la conversación</a></li><li><a href="#u2-modelos">Quién empieza a hablar: los modelos de interacción</a></li><li><a href="#u2-ports">El último tramo: ¿a qué proceso?</a></li><li><a href="#u2-5tupla">Cinco datos para identificar una conversación</a></li><li><a href="#u2-binding">¿Cómo sabe el cliente a qué port llamar?</a></li><li><a href="#u2-direcciones">El cuadro completo: una dirección por capa</a></li><li><a href="#u2-transporte">La capa de transporte ofrece dos servicios</a></li><li><a href="#u2-donde">¿Dónde actúa la capa de transporte?</a></li><li><a href="#u2-resumen">En resumen</a></li><li><a href="#u2-preguntas">Lo que te van a preguntar</a></li><li><a href="#u2-simulacros">Simulacros</a></li><li><a href="#u2-ejercicios">Ejercicios</a></li></ul></li><li class="nav-parte"><a class="nav-h" href="#u7"><span class="nav-et">Unidad 7 · 0.5 pt</span><span class="nav-t">UDP</span></a><ul class="nav-subs"><li><a href="#u7-idea">Lo mínimo que se le puede agregar a IP</a></li><li><a href="#u7-no-ofrece">Lo que UDP no hace</a></li><li><a href="#u7-cuando">¿Por qué alguien elegiría algo que no garantiza nada?</a></li><li><a href="#u7-header">El header: cuatro campos</a></li><li><a href="#u7-encapsulado">Viajando dentro de IP</a></li><li><a href="#u7-demux">Cómo llega el datagrama al proceso</a></li><li><a href="#u7-resumen">En resumen</a></li><li><a href="#u7-preguntas">Lo que te van a preguntar</a></li><li><a href="#u7-simulacros">Simulacros</a></li><li><a href="#u7-ejercicios">Ejercicios de la guía</a></li></ul></li><li class="nav-parte"><a class="nav-h" href="#u8"><span class="nav-et">Unidad 8 · 1.5 pt</span><span class="nav-t">TCP</span></a><ul class="nav-subs"><li><a href="#u8-meta">Qué queremos construir</a></li><li><a href="#u8-segmentacion">Cortar el flujo en pedazos: segmentos y MSS</a></li><li><a href="#u8-secuencia">Poner orden: numerar los bytes</a></li><li><a href="#u8-arq">Recuperar lo perdido: checksum, ACK y retransmisión</a></li><li><a href="#u8-rto">¿Cuánto esperar? El RTO</a></li><li><a href="#u8-ventana">No esperar de a uno: la ventana deslizante</a></li><li><a href="#u8-flujo">No ahogar al receptor: control de flujo</a></li><li><a href="#u8-congestion">No ahogar a la red: control de congestión</a></li><li><a href="#u8-conexion">Todo esto necesita memoria compartida: la conexión</a></li><li><a href="#u8-fullduplex">Dos flujos, un segmento: full duplex y piggybacking</a></li><li><a href="#u8-header">El header, ahora que cada campo tiene sentido</a></li><li><a href="#u8-throughput">El techo de los 64 KiB: BDP, LFN y window scale</a></li><li><a href="#u8-cierre-historia">Lo que nos queda</a></li><li><a href="#u8-resumen">En resumen</a></li><li><a href="#u8-preguntas">Lo que te van a preguntar</a></li><li><a href="#u8-simulacros">Simulacros</a></li><li><a href="#u8-guia">Ejercicios de la guía</a></li></ul></li><li class="nav-parte"><a class="nav-h" href="#u3"><span class="nav-et">Unidad 3 · 1.0 pt</span><span class="nav-t">DNS</span></a><ul class="nav-subs"><li><a href="#u3-problema">Nombres para las personas, números para la red</a></li><li><a href="#u3-hosts">La primera solución: un archivo copiado a todos</a></li><li><a href="#u3-idea">La idea: una base de datos repartida</a></li><li><a href="#u3-arbol">Los nombres forman un árbol</a></li><li><a href="#u3-zonas">Quién administra qué: zonas y delegación</a></li><li><a href="#u3-rrs">Qué se guarda: los Resource Records</a></li><li><a href="#u3-servers">Las copias: servidor primario y secundarios</a></li><li><a href="#u3-resolucion">Cómo se resuelve un nombre</a></li><li><a href="#u3-cache">La caché y el TTL</a></li><li><a href="#u3-mensajes">El mensaje DNS por dentro</a></li><li><a href="#u3-transporte">Por qué UDP, y cuándo TCP</a></li><li><a href="#u3-reverso">Al revés: de la IP al nombre</a></li><li><a href="#u3-registro">Cómo se consigue un nombre</a></li><li><a href="#u3-herramientas">Verlo en tu computadora: nslookup y dig</a></li><li><a href="#u3-resumen">En resumen</a></li><li><a href="#u3-preguntas">Lo que te van a preguntar</a></li><li><a href="#u3-simulacros">Simulacros</a></li></ul></li><li class="nav-parte"><a class="nav-h" href="#u6"><span class="nav-et">Unidad 6 · 0.5 pt</span><span class="nav-t">DHCP</span></a><ul class="nav-subs"><li><a href="#u6-problema">El problema: una computadora que llega sin saber nada</a></li><li><a href="#u6-que-es">La solución: DHCP</a></li><li><a href="#u6-sin-ip">¿Cómo hablar si todavía no tengo IP?</a></li><li><a href="#u6-dora">El diálogo: DORA</a></li><li><a href="#u6-lease">La IP es un préstamo: lease, renovación y release</a></li><li><a href="#u6-relay">Si el servidor está en otra red: relay agents</a></li><li><a href="#u6-pdu">El mensaje DHCP por dentro</a></li><li><a href="#u6-asignacion">Cómo se configura el servidor</a></li><li><a href="#u6-resumen">En resumen</a></li><li><a href="#u6-preguntas">Lo que te van a preguntar</a></li><li><a href="#u6-simulacros">Simulacros</a></li></ul></li><li class="nav-parte"><a class="nav-h" href="#u4"><span class="nav-et">Unidad 4 · 0.5 pt</span><span class="nav-t">Mail: SMTP, POP, IMAP</span></a><ul class="nav-subs"><li><a href="#u4-problema">El problema: hablarle a alguien que no está</a></li><li><a href="#u4-arquitectura">Las piezas del sistema</a></li><li><a href="#u4-direccion">La dirección y cómo encontrar el servidor</a></li><li><a href="#u4-smtp">SMTP: cómo se entrega un mensaje</a></li><li><a href="#u4-mensaje">El sobre y la carta: envelope, headers y body</a></li><li><a href="#u4-mime">MIME: mandar algo más que texto</a></li><li><a href="#u4-pop-imap">Leer el correo: POP e IMAP</a></li><li><a href="#u4-seguridad">El problema de la identidad: SPF, DKIM y DMARC</a></li><li><a href="#u4-resumen">En resumen</a></li><li><a href="#u4-preguntas">Lo que te van a preguntar</a></li><li><a href="#u4-simulacros">Simulacros</a></li><li><a href="#u4-ejercicios">Ejercicios de la guía</a></li></ul></li><li class="nav-parte"><a class="nav-h" href="#u5"><span class="nav-et">Unidad 5 · 0.5 pt</span><span class="nav-t">Web services: HTTP</span></a><ul class="nav-subs"><li><a href="#u5-problema">El problema: pedir un documento que está en otra máquina</a></li><li><a href="#u5-url">Nombrar un recurso: la URL</a></li><li><a href="#u5-que-es">Pedir y recibir: qué es HTTP</a></li><li><a href="#u5-mensajes">Cómo es un mensaje HTTP</a></li><li><a href="#u5-metodos">Qué se le puede pedir al servidor: los métodos</a></li><li><a href="#u5-codigos">Qué contesta el servidor: los códigos de respuesta</a></li><li><a href="#u5-stateless">Stateless: el servidor no se acuerda de vos</a></li><li><a href="#u5-persistentes">Performance: una conexión por objeto es lenta</a></li><li><a href="#u5-virtual-hosts">Muchos sitios en un servidor: el header Host</a></li><li><a href="#u5-caching">No bajar dos veces lo mismo: proxy y caché</a></li><li><a href="#u5-versiones">De HTTP 1.1 a HTTP/3</a></li><li><a href="#u5-https">HTTPS: que nadie lea en el camino</a></li><li><a href="#u5-resumen">En resumen</a></li><li><a href="#u5-preguntas">Lo que te van a preguntar</a></li><li><a href="#u5-simulacros">Simulacros</a></li><li><a href="#u5-guia">Ejercicios de la guía</a></li></ul></li><li class="nav-parte"><a class="nav-h" href="#u2b"><span class="nav-et">Unidad 2 · aplicaciones</span><span class="nav-t">TELNET, SSH, FTP y TFTP</span></a><ul class="nav-subs"><li><a href="#u2b-remoto">Usar una computadora que está en otro lado</a></li><li><a href="#u2b-telnet">TELNET</a></li><li><a href="#u2b-ssh">SSH: lo mismo, pero seguro</a></li><li><a href="#u2b-archivos">Mover archivos entre máquinas</a></li><li><a href="#u2b-resumen">En resumen</a></li><li><a href="#u2b-preguntas">Lo que te van a preguntar</a></li><li><a href="#u2b-simulacros">Simulacros</a></li><li><a href="#u2b-ejercicios">Ejercicios de la guía</a></li></ul></li><li class="nav-parte"><a class="nav-h" href="#e9"><span class="nav-et">Ejercicio 9 · 1.0 pt</span><span class="nav-t">Taller: ejercicio DNS</span></a><ul class="nav-subs"><li><a href="#e9-captura">Qué es una captura y cómo se lee</a></li><li><a href="#e9-diagrama">El cuadro completo: ubicar la captura en la resolución</a></li><li><a href="#e9-guia">Guía UT2, resuelta</a></li><li><a href="#e9-practica">Capturas para practicar</a></li></ul></li><li class="nav-parte"><a class="nav-h" href="#e10"><span class="nav-et">Ejercicio 10 · 1.0 pt</span><span class="nav-t">Taller: ejercicio TCP</span></a><ul class="nav-subs"><li><a href="#e10-tipos">Qué te pueden tomar</a></li><li><a href="#e10-reglas">Las reglas de oro, con su porqué</a></li><li><a href="#e10-ladder">Cómo dibujar un ladder (TCP flow)</a></li><li><a href="#e10-guia-a">Guía UT3 resuelta (ej. 1 a 7)</a></li><li><a href="#e10-guia-b">Guía UT3 resuelta (ej. 8 a 12)</a></li><li><a href="#e10-tipo">Ejercicios tipo parcial</a></li><li><a href="#e10-simulacro">Simulacro de reglas</a></li></ul></li><li class="nav-parte"><a class="nav-h" href="#global"><span class="nav-et">Global · 2.0 pt</span><span class="nav-t">Integrador: de la URL a la página</span></a><ul class="nav-subs"><li><a href="#global-escenario">El escenario</a></li><li><a href="#global-secuencia">La secuencia completa</a></li><li><a href="#global-paso0">Paso 0 · El navegador interpreta la URL</a></li><li><a href="#global-dhcp">Paso 1 · DHCP: la PC consigue su configuración</a></li><li><a href="#global-arp">Paso 2 · ¿Directo o por el gateway? ARP</a></li><li><a href="#global-dns">Paso 3 · DNS: www.acme.com → 203.0.113.80</a></li><li><a href="#global-encapsulado">Cómo se ve cada mensaje por dentro</a></li><li><a href="#global-tcp">Paso 4 · TCP: 3-way handshake con 203.0.113.80:80</a></li><li><a href="#global-http">Paso 5 · HTTP: GET y respuesta</a></li><li><a href="#global-cierre">Paso 6 · Cierre de la conexión</a></li><li><a href="#global-resumen">Resumen en una tabla</a></li><li><a href="#global-variantes">Variantes que te pueden pedir</a></li><li><a href="#global-cruzadas">Preguntas cruzadas</a></li><li><a href="#global-simulacro">Simulacro integrador</a></li></ul></li><li class="nav-parte"><a class="nav-h" href="#anexos"><span class="nav-et">Anexos</span><span class="nav-t">Hoja resumen y glosario</span></a><ul class="nav-subs"><li><a href="#anexos-ports">Ports, transporte y PDU</a></li><li><a href="#anexos-campos">Campos y flags que siempre aparecen</a></li><li><a href="#anexos-formulas">Fórmulas</a></li><li><a href="#anexos-pares">Pares que se confunden</a></li><li><a href="#anexos-glosario">Glosario de siglas</a></li><li><a href="#anexos-checklist">Checklist de la noche anterior</a></li></ul></li></ul>
+    <ul class="nav-lista"><li class="nav-parte"><a class="nav-h" href="#inicio"><span class="nav-et">Antes de empezar</span><span class="nav-t">El parcial, por dentro</span></a><ul class="nav-subs"><li><a href="#inicio-historia">La historia que vamos a contar</a></li><li><a href="#inicio-estructura">Estructura y puntajes</a></li><li><a href="#inicio-reglas">Las reglas que importan</a></li><li><a href="#inicio-formato">Cómo es una consigna de completar</a></li><li><a href="#inicio-plan">Plan de estudio para los días que quedan</a></li></ul></li><li class="nav-parte"><a class="nav-h" href="#u1a"><span class="nav-et">Unidad 1 · parte A</span><span class="nav-t">Cómo se comunican dos computadoras</span></a><ul class="nav-subs"><li><a href="#u1a-para-que">Para qué existe una red</a></li><li><a href="#u1a-protocolo">Hablar sin memoria compartida: el protocolo</a></li><li><a href="#u1a-bits">Del bit a la señal</a></li><li><a href="#u1a-capacidad">Cuánto entra por un canal: capacidad</a></li><li><a href="#u1a-muchas">De dos máquinas a miles: hacen falta intermediarios</a></li><li><a href="#u1a-multiplexado">Compartir un enlace: multiplexado</a></li><li><a href="#u1a-conmutacion">Compartir caminos: conmutación</a></li><li><a href="#u1a-sf">Store and forward: guardar y reenviar</a></li><li><a href="#u1a-delay">Lo que cuesta compartir: delay, jitter y pérdidas</a></li><li><a href="#u1a-errores">Cuando los bits llegan mal: errores</a></li><li><a href="#u1a-tamanos">Redes chicas y redes grandes</a></li><li><a href="#u1a-sigue">Lo que sigue</a></li><li><a href="#u1a-resumen">En resumen</a></li><li><a href="#u1a-preguntas">Lo que te van a preguntar</a></li><li><a href="#u1a-simulacros">Simulacros</a></li><li><a href="#u1a-guia">Ejercicios de la Guía UT1</a></li></ul></li><li class="nav-parte"><a class="nav-h" href="#u1b"><span class="nav-et">Unidad 1 · parte B</span><span class="nav-t">Capas: OSI y TCP/IP</span></a><ul class="nav-subs"><li><a href="#u1b-problema">El problema: demasiadas cosas para resolver a la vez</a></li><li><a href="#u1b-idea">La idea: cada capa resuelve un problema y le da un servicio a la de arriba</a></li><li><a href="#u1b-vocabulario">El vocabulario de las capas</a></li><li><a href="#u1b-estandares">Por qué hacen falta estándares</a></li><li><a href="#u1b-osi">El modelo OSI: siete capas, siete problemas</a></li><li><a href="#u1b-tcpip">TCP/IP: la arquitectura que usa Internet</a></li><li><a href="#u1b-nombres">Cómo se llama la PDU en cada capa</a></li><li><a href="#u1b-direcciones">Cada capa tiene su propia forma de dirección</a></li><li><a href="#u1b-tres-niveles">Tres niveles de comunicación</a></li><li><a href="#u1b-devices">Hasta qué capa «abre» cada dispositivo</a></li><li><a href="#u1b-internet">Internet: una red de redes</a></li><li><a href="#u1b-resumen">En resumen</a></li><li><a href="#u1b-preguntas">Lo que te van a preguntar</a></li><li><a href="#u1b-simulacros">Simulacros</a></li><li><a href="#u1b-guia">Ejercicios de la Guía UT1</a></li></ul></li><li class="nav-parte"><a class="nav-h" href="#u1c"><span class="nav-et">Unidad 1 · parte C</span><span class="nav-t">Redes locales: Ethernet, switches, WiFi</span></a><ul class="nav-subs"><li><a href="#u1c-dos-capas">Las dos capas de abajo, en concreto</a></li><li><a href="#u1c-wan-lan">WAN y LAN: el medio compartido lo cambia todo</a></li><li><a href="#u1c-ethernet">Ethernet: muchas máquinas en un mismo cable</a></li><li><a href="#u1c-hub">Del cable coaxil al hub</a></li><li><a href="#u1c-switch">El switch: un dispositivo que aprende</a></li><li><a href="#u1c-stp">Caminos redundantes, loops y STP</a></li><li><a href="#u1c-wifi">WiFi: la red local por el aire</a></li><li><a href="#u1c-resumen">En resumen</a></li><li><a href="#u1c-preguntas">Lo que te van a preguntar</a></li><li><a href="#u1c-simulacros">Simulacros</a></li></ul></li><li class="nav-parte"><a class="nav-h" href="#u1d"><span class="nav-et">Unidad 1 · parte D</span><span class="nav-t">Interconectar redes: IP, ARP, ICMP</span></a><ul class="nav-subs"><li><a href="#u1d-problema">Una LAN no alcanza</a></li><li><a href="#u1d-ip">IP: una capa por encima de todas las redes</a></li><li><a href="#u1d-direcciones">Direcciones que dicen dónde estás</a></li><li><a href="#u1d-ruteo">Ruteo: decidir hacia dónde va cada datagrama</a></li><li><a href="#u1d-fragmentacion">Fragmentación: cuando el datagrama no entra</a></li><li><a href="#u1d-arp">ARP: de la dirección IP a la dirección MAC</a></li><li><a href="#u1d-icmp">ICMP: cómo se entera el origen de que algo falló</a></li><li><a href="#u1d-resumen">En resumen</a></li><li><a href="#u1d-preguntas">Lo que te van a preguntar</a></li><li><a href="#u1d-simulacros">Simulacros</a></li><li><a href="#u1d-ejercicios">Ejercicios</a></li></ul></li><li class="nav-parte"><a class="nav-h" href="#u2"><span class="nav-et">Unidad 2 · 0.5 pt</span><span class="nav-t">Procesos que se hablan: IPC y ports</span></a><ul class="nav-subs"><li><a href="#u2-para-que">¿Para qué existe todo esto?</a></li><li><a href="#u2-end-to-end">Quién participa de la conversación</a></li><li><a href="#u2-modelos">Quién empieza a hablar: los modelos de interacción</a></li><li><a href="#u2-ports">El último tramo: ¿a qué proceso?</a></li><li><a href="#u2-5tupla">Cinco datos para identificar una conversación</a></li><li><a href="#u2-binding">¿Cómo sabe el cliente a qué port llamar?</a></li><li><a href="#u2-direcciones">El cuadro completo: una dirección por capa</a></li><li><a href="#u2-transporte">La capa de transporte ofrece dos servicios</a></li><li><a href="#u2-donde">¿Dónde actúa la capa de transporte?</a></li><li><a href="#u2-resumen">En resumen</a></li><li><a href="#u2-preguntas">Lo que te van a preguntar</a></li><li><a href="#u2-simulacros">Simulacros</a></li><li><a href="#u2-ejercicios">Ejercicios</a></li></ul></li><li class="nav-parte"><a class="nav-h" href="#u7"><span class="nav-et">Unidad 7 · 0.5 pt</span><span class="nav-t">UDP</span></a><ul class="nav-subs"><li><a href="#u7-idea">Lo mínimo que se le puede agregar a IP</a></li><li><a href="#u7-no-ofrece">Lo que UDP no hace</a></li><li><a href="#u7-cuando">¿Por qué alguien elegiría algo que no garantiza nada?</a></li><li><a href="#u7-header">El header: cuatro campos</a></li><li><a href="#u7-encapsulado">Viajando dentro de IP</a></li><li><a href="#u7-demux">Cómo llega el datagrama al proceso</a></li><li><a href="#u7-resumen">En resumen</a></li><li><a href="#u7-preguntas">Lo que te van a preguntar</a></li><li><a href="#u7-simulacros">Simulacros</a></li><li><a href="#u7-ejercicios">Ejercicios de la guía</a></li></ul></li><li class="nav-parte"><a class="nav-h" href="#u8"><span class="nav-et">Unidad 8 · 1.5 pt</span><span class="nav-t">TCP</span></a><ul class="nav-subs"><li><a href="#u8-meta">Qué queremos construir</a></li><li><a href="#u8-segmentacion">Cortar el flujo en pedazos: segmentos y MSS</a></li><li><a href="#u8-secuencia">Poner orden: numerar los bytes</a></li><li><a href="#u8-arq">Recuperar lo perdido: checksum, ACK y retransmisión</a></li><li><a href="#u8-rto">¿Cuánto esperar? El RTO</a></li><li><a href="#u8-ventana">No esperar de a uno: la ventana deslizante</a></li><li><a href="#u8-flujo">No ahogar al receptor: control de flujo</a></li><li><a href="#u8-congestion">No ahogar a la red: control de congestión</a></li><li><a href="#u8-conexion">Todo esto necesita memoria compartida: la conexión</a></li><li><a href="#u8-fullduplex">Dos flujos, un segmento: full duplex y piggybacking</a></li><li><a href="#u8-header">El header, ahora que cada campo tiene sentido</a></li><li><a href="#u8-throughput">El techo de los 64 KiB: BDP, LFN y window scale</a></li><li><a href="#u8-cierre-historia">Lo que nos queda</a></li><li><a href="#u8-resumen">En resumen</a></li><li><a href="#u8-preguntas">Lo que te van a preguntar</a></li><li><a href="#u8-simulacros">Simulacros</a></li><li><a href="#u8-guia">Ejercicios de la guía</a></li></ul></li><li class="nav-parte"><a class="nav-h" href="#u3"><span class="nav-et">Unidad 3 · 1.0 pt</span><span class="nav-t">DNS</span></a><ul class="nav-subs"><li><a href="#u3-problema">Nombres para las personas, números para la red</a></li><li><a href="#u3-hosts">La primera solución: un archivo copiado a todos</a></li><li><a href="#u3-idea">La idea: una base de datos repartida</a></li><li><a href="#u3-arbol">Los nombres forman un árbol</a></li><li><a href="#u3-zonas">Quién administra qué: zonas y delegación</a></li><li><a href="#u3-rrs">Qué se guarda: los Resource Records</a></li><li><a href="#u3-servers">Las copias: servidor primario y secundarios</a></li><li><a href="#u3-resolucion">Cómo se resuelve un nombre</a></li><li><a href="#u3-cache">La caché y el TTL</a></li><li><a href="#u3-mensajes">El mensaje DNS por dentro</a></li><li><a href="#u3-transporte">Por qué UDP, y cuándo TCP</a></li><li><a href="#u3-reverso">Al revés: de la IP al nombre</a></li><li><a href="#u3-registro">Cómo se consigue un nombre</a></li><li><a href="#u3-herramientas">Verlo en tu computadora: nslookup y dig</a></li><li><a href="#u3-resumen">En resumen</a></li><li><a href="#u3-preguntas">Lo que te van a preguntar</a></li><li><a href="#u3-simulacros">Simulacros</a></li></ul></li><li class="nav-parte"><a class="nav-h" href="#u6"><span class="nav-et">Unidad 6 · 0.5 pt</span><span class="nav-t">DHCP</span></a><ul class="nav-subs"><li><a href="#u6-problema">El problema: una computadora que llega sin saber nada</a></li><li><a href="#u6-que-es">La solución: DHCP</a></li><li><a href="#u6-sin-ip">¿Cómo hablar si todavía no tengo IP?</a></li><li><a href="#u6-dora">El diálogo: DORA</a></li><li><a href="#u6-lease">La IP es un préstamo: lease, renovación y release</a></li><li><a href="#u6-relay">Si el servidor está en otra red: relay agents</a></li><li><a href="#u6-pdu">El mensaje DHCP por dentro</a></li><li><a href="#u6-asignacion">Cómo se configura el servidor</a></li><li><a href="#u6-resumen">En resumen</a></li><li><a href="#u6-preguntas">Lo que te van a preguntar</a></li><li><a href="#u6-simulacros">Simulacros</a></li></ul></li><li class="nav-parte"><a class="nav-h" href="#u4"><span class="nav-et">Unidad 4 · 0.5 pt</span><span class="nav-t">Mail: SMTP, POP, IMAP</span></a><ul class="nav-subs"><li><a href="#u4-problema">El problema: hablarle a alguien que no está</a></li><li><a href="#u4-arquitectura">Las piezas del sistema</a></li><li><a href="#u4-direccion">La dirección y cómo encontrar el servidor</a></li><li><a href="#u4-smtp">SMTP: cómo se entrega un mensaje</a></li><li><a href="#u4-mensaje">El sobre y la carta: envelope, headers y body</a></li><li><a href="#u4-mime">MIME: mandar algo más que texto</a></li><li><a href="#u4-pop-imap">Leer el correo: POP e IMAP</a></li><li><a href="#u4-seguridad">El problema de la identidad: SPF, DKIM y DMARC</a></li><li><a href="#u4-resumen">En resumen</a></li><li><a href="#u4-preguntas">Lo que te van a preguntar</a></li><li><a href="#u4-simulacros">Simulacros</a></li><li><a href="#u4-ejercicios">Ejercicios de la guía</a></li></ul></li><li class="nav-parte"><a class="nav-h" href="#u5"><span class="nav-et">Unidad 5 · 0.5 pt</span><span class="nav-t">Web services: HTTP</span></a><ul class="nav-subs"><li><a href="#u5-problema">El problema: pedir un documento que está en otra máquina</a></li><li><a href="#u5-url">Nombrar un recurso: la URL</a></li><li><a href="#u5-que-es">Pedir y recibir: qué es HTTP</a></li><li><a href="#u5-mensajes">Cómo es un mensaje HTTP</a></li><li><a href="#u5-metodos">Qué se le puede pedir al servidor: los métodos</a></li><li><a href="#u5-codigos">Qué contesta el servidor: los códigos de respuesta</a></li><li><a href="#u5-stateless">Stateless: el servidor no se acuerda de vos</a></li><li><a href="#u5-persistentes">Performance: una conexión por objeto es lenta</a></li><li><a href="#u5-virtual-hosts">Muchos sitios en un servidor: el header Host</a></li><li><a href="#u5-caching">No bajar dos veces lo mismo: proxy y caché</a></li><li><a href="#u5-versiones">De HTTP 1.1 a HTTP/3</a></li><li><a href="#u5-https">HTTPS: que nadie lea en el camino</a></li><li><a href="#u5-resumen">En resumen</a></li><li><a href="#u5-preguntas">Lo que te van a preguntar</a></li><li><a href="#u5-simulacros">Simulacros</a></li><li><a href="#u5-guia">Ejercicios de la guía</a></li></ul></li><li class="nav-parte"><a class="nav-h" href="#u2b"><span class="nav-et">Unidad 2 · aplicaciones</span><span class="nav-t">TELNET, SSH, FTP y TFTP</span></a><ul class="nav-subs"><li><a href="#u2b-remoto">Usar una computadora que está en otro lado</a></li><li><a href="#u2b-telnet">TELNET</a></li><li><a href="#u2b-ssh">SSH: lo mismo, pero seguro</a></li><li><a href="#u2b-archivos">Mover archivos entre máquinas</a></li><li><a href="#u2b-resumen">En resumen</a></li><li><a href="#u2b-preguntas">Lo que te van a preguntar</a></li><li><a href="#u2b-simulacros">Simulacros</a></li><li><a href="#u2b-ejercicios">Ejercicios de la guía</a></li></ul></li><li class="nav-parte"><a class="nav-h" href="#e9"><span class="nav-et">Ejercicio 9 · 1.0 pt</span><span class="nav-t">Taller: ejercicio DNS</span></a><ul class="nav-subs"><li><a href="#e9-captura">Qué es una captura y cómo se lee</a></li><li><a href="#e9-diagrama">El cuadro completo: ubicar la captura en la resolución</a></li><li><a href="#e9-guia">Guía UT2, resuelta</a></li><li><a href="#e9-practica">Capturas para practicar</a></li></ul></li><li class="nav-parte"><a class="nav-h" href="#e10"><span class="nav-et">Ejercicio 10 · 1.0 pt</span><span class="nav-t">Taller: ejercicio TCP</span></a><ul class="nav-subs"><li><a href="#e10-tipos">Qué te pueden tomar</a></li><li><a href="#e10-reglas">Las reglas de oro, con su porqué</a></li><li><a href="#e10-ladder">Cómo dibujar un ladder (TCP flow)</a></li><li><a href="#e10-guia-a">Guía UT3 resuelta (ej. 1 a 7)</a></li><li><a href="#e10-guia-b">Guía UT3 resuelta (ej. 8 a 12)</a></li><li><a href="#e10-tipo">Ejercicios tipo parcial</a></li><li><a href="#e10-simulacro">Simulacro de reglas</a></li></ul></li><li class="nav-parte"><a class="nav-h" href="#global"><span class="nav-et">Global · 2.0 pt</span><span class="nav-t">Integrador: de la URL a la página</span></a><ul class="nav-subs"><li><a href="#global-escenario">El escenario</a></li><li><a href="#global-secuencia">La secuencia completa</a></li><li><a href="#global-paso0">Paso 0 · El navegador interpreta la URL</a></li><li><a href="#global-dhcp">Paso 1 · DHCP: la PC consigue su configuración</a></li><li><a href="#global-arp">Paso 2 · ¿Directo o por el gateway? ARP</a></li><li><a href="#global-dns">Paso 3 · DNS: www.acme.com → 203.0.113.80</a></li><li><a href="#global-encapsulado">Cómo se ve cada mensaje por dentro</a></li><li><a href="#global-tcp">Paso 4 · TCP: 3-way handshake con 203.0.113.80:80</a></li><li><a href="#global-http">Paso 5 · HTTP: GET y respuesta</a></li><li><a href="#global-cierre">Paso 6 · Cierre de la conexión</a></li><li><a href="#global-resumen">Resumen en una tabla</a></li><li><a href="#global-variantes">Variantes que te pueden pedir</a></li><li><a href="#global-cruzadas">Preguntas cruzadas</a></li><li><a href="#global-simulacro">Simulacro integrador</a></li></ul></li><li class="nav-parte"><a class="nav-h" href="#anexos"><span class="nav-et">Anexos</span><span class="nav-t">Hoja resumen y glosario</span></a><ul class="nav-subs"><li><a href="#anexos-ports">Ports, transporte y PDU</a></li><li><a href="#anexos-campos">Campos y flags que siempre aparecen</a></li><li><a href="#anexos-formulas">Fórmulas</a></li><li><a href="#anexos-pares">Pares que se confunden</a></li><li><a href="#anexos-glosario">Glosario de siglas</a></li><li><a href="#anexos-checklist">Checklist de la noche anterior</a></li></ul></li><li class="nav-parte"><a class="nav-h" href="#repa"><span class="nav-et">Repaso final · A</span><span class="nav-t">Simulacro de parcial A</span></a><ul class="nav-subs"><li><a href="#repa-u1">Unidad 1 · Fundamentos y arquitectura en capas</a></li><li><a href="#repa-u2">Unidad 2 · Aplicaciones distribuidas: IPC</a></li><li><a href="#repa-u3">Unidad 3 · DNS</a></li><li><a href="#repa-u4">Unidad 4 · Mail: SMTP, POP, IMAP</a></li><li><a href="#repa-u5">Unidad 5 · Web services: HTTP</a></li><li><a href="#repa-u6">Unidad 6 · DHCP</a></li><li><a href="#repa-u7">Unidad 7 · UDP</a></li><li><a href="#repa-u8">Unidad 8 · TCP</a></li><li><a href="#repa-global">Global · De la URL a la página</a></li></ul></li><li class="nav-parte"><a class="nav-h" href="#repb"><span class="nav-et">Repaso final · B</span><span class="nav-t">Simulacro de parcial B</span></a><ul class="nav-subs"><li><a href="#repb-u1">Unidad 1 · Fundamentos de redes</a></li><li><a href="#repb-u2">Unidad 2 · Aplicaciones distribuidas</a></li><li><a href="#repb-u3">Unidad 3 · DNS</a></li><li><a href="#repb-u4">Unidad 4 · Mail</a></li><li><a href="#repb-u5">Unidad 5 · HTTP</a></li><li><a href="#repb-u6">Unidad 6 · DHCP</a></li><li><a href="#repb-u7">Unidad 7 · UDP</a></li><li><a href="#repb-u8">Unidad 8 · TCP</a></li><li><a href="#repb-global">Global · Integrador</a></li></ul></li><li class="nav-parte"><a class="nav-h" href="#repc"><span class="nav-et">Repaso final · C</span><span class="nav-t">Desafíos cruzados</span></a><ul class="nav-subs"><li><a href="#repc-udp-tcp">UDP frente a TCP</a></li><li><a href="#repc-flujo-congestion">Control de flujo frente a control de congestión</a></li><li><a href="#repc-hub-switch-router">Hub, switch y router</a></li><li><a href="#repc-dominio-zona">Dominio, zona y delegación: el caso udesa.edu.ar</a></li><li><a href="#repc-smtp-pop-imap">SMTP, POP e IMAP</a></li><li><a href="#repc-circuitos-paquetes">Circuitos frente a paquetes, con números</a></li><li><a href="#repc-cwnd">La ventana de congestión, RTT por RTT</a></li><li><a href="#repc-bdp">Ventana, BDP y window scale</a></li><li><a href="#repc-subred">Una dirección, su red y su ruta</a></li><li><a href="#repc-sn-an">Números de secuencia con una pérdida</a></li><li><a href="#repc-ultimo-ack">Qué pasa si se pierde el último ACK del cierre</a></li><li><a href="#repc-mtu">Qué pasa si el datagrama no entra en el MTU</a></li></ul></li></ul>
   </nav>
   <main>
     <header class="hero">
@@ -322,9 +332,9 @@ svg.dib{max-width:100%; height:auto}
         computadoras unidas por un cable hasta la página web que aparece en tu navegador. Pensado para
         aprender desde cero, con las palabras de la cátedra y práctica en el formato del examen.</p>
         <ul class="chips">
-          <li>17 partes</li><li>47 simulacros de completar</li>
-          <li>569 huecos autocorregibles</li><li>237 preguntas de repaso</li>
-          <li>57 ejercicios resueltos</li>
+          <li>20 partes</li><li>87 simulacros de completar</li>
+          <li>1094 huecos autocorregibles</li><li>237 preguntas de repaso</li>
+          <li>84 ejercicios resueltos</li>
         </ul>
         <div class="reglas">
           <h2>Cómo usar este apunte</h2>
@@ -442,6 +452,17 @@ las funciones de IP (direccionamiento, ruteo, fragmentación, MTU, interconectar
 las capas OSI con su número y el direccionamiento de cada capa (FQDN, Mail@, URL, Port#, IPv4@, IPv6@, MAC@).
 Todo eso está en la <a href="#u1a">Unidad 1</a>.</p>
 
+<div class="caja catedra"><p class="caja-tit">Lo que dijo el profesor sobre el parcial real</p>
+<ul>
+<li>Van a ser <b>muchos párrafos</b> de este estilo. Para armarlos, el profesor le pide a una IA que explique un tema
+en un párrafo y le saca palabras. O sea: <b>no van a ser las frases de sus slides</b>, sino explicaciones redactadas
+de otra manera. Lo que sirve es entender el concepto, no memorizar la oración.</li>
+<li>El banco de palabras es <b>uno por párrafo</b> y <b>no es literal</b>: la palabra puede estar en otra forma
+(singular en vez de plural, infinitivo en vez de conjugado). No vas a poder sacar la respuesta por concordancia.</li>
+</ul>
+<p>El simulacro de la muestra (abajo) sigue sirviendo para calentar, pero el entrenamiento de verdad para ese formato
+está en el <a href="#repa">Repaso final</a>: dos simulacros completos y una ronda de desafíos, con bancos no literales.</p></div>
+
 <div class="cloze">
 <p class="caja-tit">Simulacro · la 1a de la muestra, para calentar</p>
 <p>En sistemas paralelos <input class="h" data-a="débilmente"> acoplados, el modelo de comunicación utilizado
@@ -467,6 +488,7 @@ paquete, procedimiento, protocol, segmento, trama, unit</p>
 <tr><td>3</td><td><a href="#u3">DNS</a> + <a href="#e9">Taller DNS</a></td><td>2.0 puntos. Leer una captura es mecánico una vez que entendés qué significa cada campo.</td></tr>
 <tr><td>4</td><td><a href="#u6">DHCP</a>, <a href="#u4">Mail</a>, <a href="#u5">HTTP</a>, <a href="#u2b">TELNET/SSH/FTP</a></td><td>0.5 cada una. Son cortas y se apoyan en todo lo anterior.</td></tr>
 <tr><td>5</td><td><a href="#global">Integrador</a> + <a href="#anexos">hoja resumen</a></td><td>Atan todo. La hoja resumen sirve para el repaso de la mañana del examen.</td></tr>
+<tr><td>6</td><td><a href="#repa">Repaso final</a>: Simulacro A, Simulacro B y Desafíos</td><td>El formato real del parcial. Hacelos sin mirar el apunte y cronometrados; repasá cada hueco que falles.</td></tr>
 </tbody></table></div>
 </section>
 
@@ -8884,6 +8906,579 @@ en esa red · Release para devolverla · Relay agent (giaddr) si el server está
 </div>
 </section>
 
+<section class="parte" id="repa" data-et="Repaso final · A" data-t="Simulacro de parcial A">
+<header class="parte-cab"><p class="eyebrow">Repaso final</p><h1>Simulacro de parcial A</h1></header>
+
+<div class="caja lee"><p class="caja-tit">Cómo hacerlo</p>
+<p>Así va a ser el parcial: párrafos que explican un tema, como si los hubiera escrito una IA, con palabras sacadas y
+<b>un banco por párrafo</b>. El banco <b>no es literal</b>: trae cada palabra en su forma base (singular, masculino,
+infinitivo) y vos la tenés que adaptar al texto. Además tiene distractores, y una palabra puede servir para más de
+un hueco o para ninguno.</p>
+<p>Hacelo <b>sin mirar el apunte</b> y cronometrate: en el parcial tenés unos 120 minutos para todo. Al final usá
+<i>Corregir todo</i> para ver tu puntaje global, y volvé a la parte del apunte de cada párrafo que te salga mal.</p></div>
+
+<div class="cloze-total"></div>
+
+<h2 id="repa-u1">Unidad 1 · Fundamentos y arquitectura en capas</h2>
+
+<div class="cloze">
+<p class="tema">Unidad 1 · Fundamentos — red de datos, protocolo, intermediarios</p>
+<p>Una red de datos existe, en última instancia, para intercomunicar
+<input class="h" data-a="procesos" data-l="proceso"> que corren en máquinas distintas y así ofrecerles a los usuarios
+aplicaciones distribuidas. Cuando los sistemas están <input class="h" data-a="debilmente" data-l="débilmente">
+acoplados no comparten memoria: se comunican mediante transmisión <input class="h" data-a="serial|serie" data-l="serial">,
+intercambiando mensajes protocolares. Por eso necesitan un protocolo, que define dos cosas: el
+<input class="h" data-a="formato" data-l="formato"> de los mensajes y el
+<input class="h" data-a="procedimiento" data-l="procedimiento"> de intercambio. Las computadoras de los usuarios
+y los servidores son sistemas <input class="h" data-a="extremos" data-l="extremo">, mientras que switches y routers
+son sistemas <input class="h" data-a="intermediarios" data-l="intermediario">. Estos últimos suelen trabajar con
+Store and Forward: tienen que recibir el paquete <input class="h" data-a="completo|entero" data-l="completo"> antes
+de reenviarlo, y para eso lo guardan en memoria. Si los paquetes llegan más rápido de lo que se pueden despachar, se
+forman <input class="h" data-a="colas" data-l="cola">, que aumentan el
+<input class="h" data-a="delay|retardo|demora|retraso" data-l="delay"> y su variación, llamada
+<input class="h" data-a="jitter" data-l="jitter">; y si la memoria se llena, los paquetes que no entran se
+<input class="h" data-a="descartan|pierden" data-l="descartar">. Entre las componentes del delay están el tiempo de
+<input class="h" data-a="transmision|serializacion|insercion" data-l="transmisión">, que vale L/R y depende del
+tamaño del paquete, y el de <input class="h" data-a="propagacion" data-l="propagación">, que depende de la distancia
+y de la velocidad de la señal en el medio.</p>
+<p class="banco"><b>Ayuda:</b> cola, completo, conmutación, débilmente, delay, descartar, encabezado, extremo, formato,
+fuertemente, intermediario, jitter, paralelo, parcial, procedimiento, procesamiento, proceso, propagación,
+retransmitir, serial, transmisión, trama, usuario</p>
+</div>
+
+<div class="cloze">
+<p class="tema">Unidad 1 · Arquitectura en capas — encapsulado, PDU, OSI, direcciones</p>
+<p>Para manejar la complejidad, las redes se organizan en <input class="h" data-a="capas|niveles" data-l="capa">:
+cada una le presta un <input class="h" data-a="servicio" data-l="servicio"> a la de arriba y se comunica lógicamente
+con su capa <input class="h" data-a="par|homologa|igual|par" data-l="par"> del otro extremo. Al bajar por la pila,
+cada capa <input class="h" data-a="encapsula" data-l="encapsular"> la unidad de datos que recibe de arriba
+agregándole su propio <input class="h" data-a="encabezado|header|cabecera" data-l="encabezado">, y al subir, del lado
+del receptor, cada capa la <input class="h" data-a="desencapsula" data-l="desencapsular">. Esa unidad se llama
+genéricamente PDU y cambia de nombre según la capa: en Ethernet es una
+<input class="h" data-a="trama|frame" data-l="trama">, en IP un
+<input class="h" data-a="datagrama|paquete" data-l="datagrama"> y en TCP un
+<input class="h" data-a="segmento" data-l="segmento">. El modelo OSI define
+<input class="h" data-a="siete|7" data-l="siete"> capas; la de transporte es la número
+<input class="h" data-a="cuatro|4" data-l="cuatro"> y la de red, la <input class="h" data-a="tres|3" data-l="tres">.
+Cada capa tiene además su propio direccionamiento: un proceso se identifica con un
+<input class="h" data-a="port|puerto" data-l="port">, y una interfaz dentro de la LAN con una dirección
+<input class="h" data-a="mac" data-l="MAC"> de 48 bits. Lo mismo pasa con los dispositivos: un switch toma sus
+decisiones en la capa de <input class="h" data-a="enlace|enlace de datos" data-l="enlace">, mientras que un router lo
+hace en la capa de <input class="h" data-a="red|interred" data-l="red">.</p>
+<p class="banco"><b>Ayuda:</b> bit, capa, cinco, cuatro, datagrama, desencapsular, dos, encabezado, encapsular, enlace,
+física, fragmentar, interfaz, IP, MAC, mensaje, par, port, protocolo, red, segmento, seis, servicio, sesión, siete,
+trama, transporte, tres</p>
+</div>
+
+<div class="cloze">
+<p class="tema">Unidad 1 · Capa de interred — IP, direcciones, ruteo</p>
+<p>La capa de interred existe porque las redes subyacentes son
+<input class="h" data-a="heterogeneas" data-l="heterogéneo">: usan tecnologías, direcciones y MTU distintos. IP
+resuelve esto con tres funciones. La primera es el direccionamiento: cada interfaz recibe una dirección de
+<input class="h" data-a="32|treinta y dos" data-l="32"> bits, que se divide en un prefijo de red y un número de
+<input class="h" data-a="host|hosts" data-l="host">. La <input class="h" data-a="mascara|netmask" data-l="máscara">
+indica cuántos bits pertenecen al prefijo. Por ejemplo, para 192.168.10.77/24, la dirección de red se obtiene con una
+operación <input class="h" data-a="and" data-l="AND"> bit a bit entre la IP y la máscara y es 192.168.10.<input class="h" data-a="0|cero" data-l="0">;
+la de broadcast termina en <input class="h" data-a="255" data-l="255">, y quedan
+<input class="h" data-a="254" data-l="254"> direcciones para hosts. La segunda función es el ruteo, que se basa
+únicamente en la dirección <input class="h" data-a="destino|de destino" data-l="destino"> del datagrama (DABR). Si
+varias rutas de la tabla coinciden, gana la de máscara más
+<input class="h" data-a="larga|especifica|extensa" data-l="largo">, y si no coincide ninguna se usa la ruta
+<input class="h" data-a="default|por defecto|predeterminada" data-l="default"> 0.0.0.0/0, cuyo próximo salto es el
+default <input class="h" data-a="gateway" data-l="gateway">. La tercera función, la
+<input class="h" data-a="fragmentacion" data-l="fragmentación">, entra en juego cuando un datagrama es más grande que
+el MTU de la red por la que tiene que salir.</p>
+<p class="banco"><b>Ayuda:</b> 0, 1, 16, 32, 48, 128, 254, 255, 256, AND, corto, default, destino, encapsulación,
+fragmentación, gateway, heterogéneo, homogéneo, host, largo, máscara, métrica, OR, origen, red</p>
+</div>
+
+<details class="sol"><summary>Por qué · los huecos más difíciles de la Unidad 1</summary><div>
+<ul>
+<li><b>«con su capa par»</b>: cada capa habla «lógicamente» con la misma capa del otro extremo (su par); la comunicación
+real va bajando y subiendo por la pila.</li>
+<li><b>254 hosts en un /24</b>: quedan 8 bits de host → 2⁸ = 256 direcciones, menos la de red (todos 0) y la de broadcast
+(todos 1).</li>
+<li><b>«máscara más larga»</b>: es el <i>longest prefix match</i>; la ruta más específica le gana a la más genérica. La
+default (/0) es la más corta de todas, por eso solo se usa si no coincide nada más.</li>
+</ul></div></details>
+
+<h2 id="repa-u2">Unidad 2 · Aplicaciones distribuidas: IPC</h2>
+
+<div class="cloze">
+<p class="tema">Unidad 2 · IPC — ports, 5-tupla, binding</p>
+<p>Que un datagrama IP llegue a la máquina correcta no alcanza: falta entregárselo al
+<input class="h" data-a="proceso|programa" data-l="proceso"> correcto. A esa comunicación entre programas se la llama
+IPC, y es una comunicación <input class="h" data-a="extremo a extremo|end to end" data-l="extremo a extremo">: los
+sistemas <input class="h" data-a="intermediarios" data-l="intermediario"> que están en el camino no participan de ella.
+Para distinguir a los procesos de una misma máquina, la capa de transporte usa números de
+<input class="h" data-a="port|puerto" data-l="port"> de <input class="h" data-a="16|dieciseis" data-l="16"> bits. Una
+conversación queda identificada por cinco datos: las direcciones IP de origen y de destino, los ports de origen y de
+destino y el número de <input class="h" data-a="protocolo" data-l="protocolo"> de transporte. Al par formado por una
+dirección IP y un port se lo llama <input class="h" data-a="end-point|endpoint|end point" data-l="end-point">. Para
+que el cliente sepa a dónde llamar, los servicios conocidos escuchan en ports
+<input class="h" data-a="reservados|bien conocidos" data-l="reservado">, menores a
+<input class="h" data-a="1024" data-l="1024">, mientras que el cliente usa un port
+<input class="h" data-a="efimero" data-l="efímero"> que le asigna el
+<input class="h" data-a="sistema operativo|so" data-l="sistema operativo"> solo mientras dura la comunicación. Por
+ejemplo, un servidor web escucha en el port <input class="h" data-a="80" data-l="80">, y un navegador con dos pestañas
+abiertas hacia ese mismo servidor usa dos ports de origen
+<input class="h" data-a="distintos|diferentes" data-l="distinto">: así el servidor puede distinguir las dos conexiones
+aunque la IP de origen sea la misma.</p>
+<p class="banco"><b>Ayuda:</b> 16, 32, 53, 80, 443, 512, 1024, 65535, aplicación, distinto, efímero, end-point,
+extremo a extremo, hop by hop, igual, intermediario, MAC, port, proceso, protocolo, reservado, router,
+sistema operativo</p>
+</div>
+
+<h2 id="repa-u3">Unidad 3 · DNS</h2>
+
+<div class="cloze">
+<p class="tema">Unidad 3 · DNS — espacio de nombres, zonas y delegación</p>
+<p>DNS organiza los nombres en un árbol <input class="h" data-a="jerarquico|lexicografico" data-l="jerárquico"> cuya
+raíz está atendida por <input class="h" data-a="13|trece" data-l="13"> nombres de servidores, de a.root-servers.net a
+m.root-servers.net. Justo debajo de la raíz están los dominios de primer nivel, o
+<input class="h" data-a="tld|tlds" data-l="TLD">, como .com o .ar. El nombre completo que se arma recorriendo el árbol
+desde un nodo hasta la raíz se llama <input class="h" data-a="fqdn" data-l="FQDN">, y cada parte entre puntos es un
+<input class="h" data-a="label|etiqueta" data-l="label"> de hasta <input class="h" data-a="63" data-l="63">
+caracteres. Conviene no confundir dominio con <input class="h" data-a="zona" data-l="zona">: el dominio es todo el
+subárbol que cuelga de un nodo, mientras que la zona es la porción de ese subárbol que administra una misma
+<input class="h" data-a="autoridad|entidad" data-l="autoridad">, sin incluir lo que se haya
+<input class="h" data-a="delegado" data-l="delegar">. Cuando la zona edu.ar le cede a la universidad el control de
+udesa.edu.ar, lo hace publicando registros <input class="h" data-a="ns" data-l="NS"> que indican cuáles son los
+servidores <input class="h" data-a="autoritativos" data-l="autoritativo"> de la zona hija. Si esos servidores tienen
+nombres que pertenecen a la propia zona hija, el padre agrega además registros
+<input class="h" data-a="glue" data-l="glue"> con sus direcciones IP, para romper una dependencia
+<input class="h" data-a="circular" data-l="circular">.</p>
+<p class="banco"><b>Ayuda:</b> 12, 13, 63, 255, autoridad, autoritativo, caché, circular, delegar, dominio, FQDN, glue,
+jerárquico, label, lame, MX, NS, plano, PTR, recursivo, SOA, subdominio, TLD, URL, zona</p>
+</div>
+
+<div class="cloze">
+<p class="tema">Unidad 3 · DNS — cómo se resuelve un nombre</p>
+<p>Cuando una aplicación necesita la IP de un nombre, el sistema operativo usa un componente llamado
+<input class="h" data-a="resolver|name resolver" data-l="resolver">, que le manda la consulta al servidor DNS local.
+Esa primera consulta es <input class="h" data-a="recursiva" data-l="recursivo">: el host quiere la respuesta final y no
+piensa recorrer el árbol por su cuenta, y lo indica encendiendo el flag
+<input class="h" data-a="rd" data-l="RD">. El servidor local, que suele ser un caching-only sin zonas propias, sí recorre
+la jerarquía, pero con consultas <input class="h" data-a="iterativas" data-l="iterativo">: primero le pregunta a un
+servidor <input class="h" data-a="raiz|root" data-l="raíz">, que lo deriva a los servidores del
+<input class="h" data-a="tld" data-l="TLD"> correspondiente, y estos a los servidores autoritativos del dominio. Cada
+respuesta que obtiene la guarda en <input class="h" data-a="cache" data-l="caché"> durante el tiempo que indica el campo
+<input class="h" data-a="ttl" data-l="TTL"> del registro, un valor que fija el
+<input class="h" data-a="administrador" data-l="administrador"> de la zona y no quien pregunta. Por eso, cuando el servidor
+local contesta desde su memoria, la respuesta llega con el flag <input class="h" data-a="aa" data-l="AA"> apagado: es una
+respuesta no autoritativa. Todo este diálogo viaja normalmente sobre
+<input class="h" data-a="udp" data-l="UDP">, en el port <input class="h" data-a="53" data-l="53">.</p>
+<p class="banco"><b>Ayuda:</b> 53, 67, 80, AA, administrador, caché, cliente, hoja, iterativo, navegador, QR, RA,
+raíz, RD, recursivo, resolver, SOA, TCP, TLD, TTL, UDP</p>
+</div>
+
+<details class="sol"><summary>Por qué · los huecos más difíciles de DNS</summary><div>
+<ul>
+<li><b>Zona vs dominio</b>: la zona termina donde empieza una delegación. udesa.edu.ar está dentro del <i>dominio</i>
+edu.ar pero no en la <i>zona</i> edu.ar.</li>
+<li><b>Glue</b>: si el servidor de udesa.edu.ar se llama ns1.udesa.edu.ar, para encontrar su IP habría que preguntarle…
+a él mismo. El padre rompe ese círculo dando la IP directamente.</li>
+<li><b>RD y AA</b>: RD (<i>recursion desired</i>) lo pone el que pregunta; AA (<i>authoritative answer</i>) lo pone el que
+responde, y solo si tiene la zona. Desde caché, AA = 0.</li>
+</ul></div></details>
+
+<h2 id="repa-u4">Unidad 4 · Mail: SMTP, POP, IMAP</h2>
+
+<div class="cloze">
+<p class="tema">Unidad 4 · Mail — arquitectura, SMTP y MX</p>
+<p>El correo funciona aunque el destinatario no esté conectado, porque los mensajes quedan guardados en servidores. El
+usuario redacta con su <input class="h" data-a="mua|mailtool|mail user agent" data-l="MUA">, que le entrega el mensaje a
+su <input class="h" data-a="mailhost" data-l="mailhost"> usando el protocolo
+<input class="h" data-a="smtp" data-l="SMTP">, sobre TCP en el port <input class="h" data-a="25" data-l="25">. Para
+saber a qué servidor entregarlo en el dominio de destino, el mailhost busca en el DNS el registro
+<input class="h" data-a="mx" data-l="MX"> de ese dominio. Si hay varios, prueba primero el que tiene el valor de
+preferencia más <input class="h" data-a="bajo|chico|pequeño" data-l="bajo">; si ese servidor no responde, sigue con los
+demás, que pueden funcionar como <input class="h" data-a="relay|relays|relay mailhost|relay mailhosts" data-l="relay"> y retener el correo hasta que el
+principal vuelva. En el diálogo SMTP, el cliente se presenta con
+<input class="h" data-a="helo|ehlo" data-l="HELO">, indica el remitente con
+<input class="h" data-a="mail from" data-l="MAIL FROM"> y cada destinatario con
+<input class="h" data-a="rcpt to" data-l="RCPT TO">; después, el comando
+<input class="h" data-a="data" data-l="DATA"> anuncia el contenido y la sesión termina con
+<input class="h" data-a="quit" data-l="QUIT">. Finalmente, el mensaje queda en la
+<input class="h" data-a="mailbox|casilla|buzon" data-l="mailbox"> del destinatario, de donde lo va a leer más tarde.</p>
+<p class="banco"><b>Ayuda:</b> 25, 110, 143, A, alias, alto, bajo, DATA, HELO, IMAP, mailbox, mailhost, MAIL FROM, MIME,
+MUA, MX, POP, PTR, QUIT, RCPT TO, relay, SMTP, TO</p>
+</div>
+
+<h2 id="repa-u5">Unidad 5 · Web services: HTTP</h2>
+
+<div class="cloze">
+<p class="tema">Unidad 5 · HTTP — mensajes, métodos, códigos, estado</p>
+<p>En la web, cada recurso se identifica con una <input class="h" data-a="url" data-l="URL">, que indica el protocolo,
+el host, el port y la ruta. HTTP sigue el modelo cliente-servidor: el navegador envía un
+<input class="h" data-a="request|pedido|requerimiento" data-l="request"> y el servidor contesta con un
+<input class="h" data-a="response|respuesta" data-l="response">, sobre una conexión TCP al port
+<input class="h" data-a="80" data-l="80">. La primera línea del pedido contiene el
+<input class="h" data-a="metodo" data-l="método">, la ruta y la versión. Por ejemplo,
+<input class="h" data-a="get" data-l="GET"> pide un recurso, mientras que
+<input class="h" data-a="post" data-l="POST"> manda datos en el cuerpo para que un programa del servidor los procese.
+Después vienen los headers, una línea en <input class="h" data-a="blanco" data-l="blanco"> y el cuerpo, que es
+opcional. La respuesta empieza con un código de estado: los que empiezan con
+<input class="h" data-a="2|dos" data-l="2"> indican éxito, los que empiezan con
+<input class="h" data-a="4|cuatro" data-l="4"> señalan un error del cliente, como el
+<input class="h" data-a="404" data-l="404"> cuando el recurso no existe. HTTP es
+<input class="h" data-a="stateless|sin estado" data-l="stateless">: el servidor no recuerda los pedidos anteriores. Para
+mantener una sesión se usan <input class="h" data-a="cookies|cookie" data-l="cookie">: el servidor las envía con el
+header <input class="h" data-a="set-cookie|set cookie" data-l="Set-Cookie"> y el navegador las devuelve en cada pedido
+posterior.</p>
+<p class="banco"><b>Ayuda:</b> 2, 3, 4, 5, 80, 304, 404, 443, 500, blanco, cookie, FQDN, GET, HEAD, método,
+persistente, POST, PUT, request, response, Set-Cookie, stateful, stateless, URL</p>
+</div>
+
+<h2 id="repa-u6">Unidad 6 · DHCP</h2>
+
+<div class="cloze">
+<p class="tema">Unidad 6 · DHCP — DORA</p>
+<p>Una computadora que se conecta a una red nueva no conoce su dirección IP, su máscara, su default
+<input class="h" data-a="gateway" data-l="gateway"> ni el servidor <input class="h" data-a="dns" data-l="DNS"> que debe
+usar. DHCP, sucesor de <input class="h" data-a="bootp" data-l="BOOTP">, resuelve esto automáticamente. Como el cliente
+todavía no tiene IP ni sabe dónde está el servidor, su primer mensaje, el
+<input class="h" data-a="discover" data-l="Discover">, viaja como
+<input class="h" data-a="broadcast|difusion" data-l="broadcast"> dentro de UDP (TCP no sirve, porque necesitaría una
+conexión previa), desde el port <input class="h" data-a="68" data-l="68"> del cliente hacia el port
+<input class="h" data-a="67" data-l="67"> del servidor. Los servidores que lo reciben contestan con un
+<input class="h" data-a="offer" data-l="Offer">; el cliente elige uno y lo confirma con un
+<input class="h" data-a="request" data-l="Request">, que también va por broadcast para que los demás servidores se
+enteren de que no fueron elegidos. Por último, el servidor elegido responde con un
+<input class="h" data-a="ack" data-l="Ack">, que incluye el tiempo de
+<input class="h" data-a="lease|alquiler|concesion" data-l="lease">: la dirección no se regala, se
+<input class="h" data-a="presta|alquila" data-l="prestar"> y el cliente tiene que renovarla antes de que venza.</p>
+<p class="banco"><b>Ayuda:</b> 53, 67, 68, 69, Ack, ARP, BOOTP, broadcast, Discover, DNS, gateway, lease, multicast,
+NAck, Offer, prestar, Release, Request, TTL, unicast</p>
+</div>
+
+<h2 id="repa-u7">Unidad 7 · UDP</h2>
+
+<div class="cloze">
+<p class="tema">Unidad 7 · UDP — servicio y header</p>
+<p>UDP es el protocolo de transporte mínimo: a IP le agrega poco más que el multiplexado por
+<input class="h" data-a="ports|puertos|port|puerto" data-l="port">. No establece
+<input class="h" data-a="conexion" data-l="conexión"> previa, no retransmite lo que se pierde y no
+<input class="h" data-a="reordena|ordena" data-l="reordenar"> lo que llega fuera de secuencia: si la aplicación
+necesita confiabilidad, se la tiene que dar ella misma. A cambio, su overhead es
+<input class="h" data-a="minimo" data-l="mínimo">: el header ocupa apenas <input class="h" data-a="8|ocho" data-l="8">
+bytes, repartidos en <input class="h" data-a="cuatro|4" data-l="cuatro"> campos de
+<input class="h" data-a="16|dieciseis" data-l="16"> bits cada uno: port de origen, port de destino,
+<input class="h" data-a="longitud|length|largo" data-l="longitud"> y
+<input class="h" data-a="checksum" data-l="checksum">. Este último es
+<input class="h" data-a="opcional" data-l="opcional"> y se calcula agregando un
+<input class="h" data-a="pseudo-header|pseudoheader|pseudo header|pseudo encabezado" data-l="pseudo-header"> que
+contiene las direcciones IP de origen y destino, para detectar datagramas que llegaron a un host
+<input class="h" data-a="equivocado|incorrecto|erroneo" data-l="equivocado">. Si el checksum no coincide, el datagrama
+simplemente se <input class="h" data-a="descarta" data-l="descartar">, sin avisarle a nadie. La PDU de UDP se llama
+<input class="h" data-a="datagrama" data-l="datagrama"> UDP.</p>
+<p class="banco"><b>Ayuda:</b> 8, 16, 20, 32, checksum, conexión, correcto, cuatro, datagrama, descartar, equivocado,
+longitud, MAC, máximo, mínimo, obligatorio, opcional, port, pseudo-header, reordenar, retransmitir, secuencia, segmento,
+tres</p>
+</div>
+
+<h2 id="repa-u8">Unidad 8 · TCP</h2>
+
+<div class="cloze">
+<p class="tema">Unidad 8 · TCP — servicio, segmentación y números de secuencia</p>
+<p>TCP ofrece un transporte <input class="h" data-a="confiable" data-l="confiable"> y
+<input class="h" data-a="orientado" data-l="orientado"> a la conexión, y trata los datos de la aplicación como un flujo
+continuo de <input class="h" data-a="bytes|octetos" data-l="byte">, sin respetar los límites de cada escritura. Como ese
+flujo no entra entero en un datagrama, TCP lo corta en <input class="h" data-a="segmentos" data-l="segmento">, cuyo
+tamaño máximo de datos, el <input class="h" data-a="mss" data-l="MSS">, se anuncia al establecer la conexión. En
+Ethernet, con un MTU de 1500 bytes y headers IP y TCP de <input class="h" data-a="20|veinte" data-l="20"> bytes cada uno,
+el MSS es de <input class="h" data-a="1460" data-l="1460"> bytes; así, para mandar 4000 bytes hacen falta
+<input class="h" data-a="tres|3" data-l="tres"> segmentos. Para reordenar y detectar duplicados, TCP numera los
+<input class="h" data-a="octetos|bytes" data-l="octeto">, no los segmentos: el campo
+<input class="h" data-a="sn|sequence number|numero de secuencia" data-l="SN"> de cada segmento indica el número del
+<input class="h" data-a="primer|primero" data-l="primero"> byte que transporta. El receptor confirma con el
+<input class="h" data-a="an|acknowledgment number|ack number" data-l="AN">, que contiene el número del
+<input class="h" data-a="proximo|siguiente" data-l="próximo"> byte que espera recibir: si llegó bien un segmento con
+SN = 5000 y 300 bytes de datos, el valor confirmado será <input class="h" data-a="5300" data-l="5300">.</p>
+<p class="banco"><b>Ayuda:</b> 20, 40, 1460, 1500, 5299, 5300, 5301, AN, anterior, byte, confiable, cuatro, datagrama,
+dos, mensaje, MSS, MTU, octeto, orientado, primero, próximo, segmento, SN, tres, último</p>
+</div>
+
+<div class="cloze">
+<p class="tema">Unidad 8 · TCP — apertura, cierre y estados</p>
+<p>Antes de intercambiar datos, los dos extremos sincronizan su estado con el three-way handshake, que usa
+<input class="h" data-a="tres|3" data-l="tres"> segmentos. El cliente manda un segmento con el flag
+<input class="h" data-a="syn" data-l="SYN"> encendido y su número de secuencia inicial, el
+<input class="h" data-a="isn" data-l="ISN">; el servidor responde con SYN y
+<input class="h" data-a="ack" data-l="ACK"> encendidos, confirmando ese número más uno, porque el SYN
+<input class="h" data-a="consume|ocupa" data-l="consumir"> un número de secuencia aunque no lleve datos. Del lado del
+servidor, que hizo una apertura pasiva, el estado pasa de <input class="h" data-a="listen" data-l="LISTEN"> a SYN_RCVD
+y después a <input class="h" data-a="established" data-l="ESTABLISHED">. El cierre, en cambio, necesita
+<input class="h" data-a="cuatro|4" data-l="cuatro"> segmentos, porque cada sentido de la conexión se cierra por
+<input class="h" data-a="separado|separado" data-l="separado">: quien cierra primero manda un
+<input class="h" data-a="fin" data-l="FIN"> y pasa a FIN_WAIT_1, y el otro lado, después de confirmarlo, queda en
+<input class="h" data-a="close_wait|close wait|close-wait" data-l="CLOSE_WAIT"> hasta que su aplicación también
+termine. El extremo que cerró activamente pasa al final por
+<input class="h" data-a="time_wait|time wait|time-wait" data-l="TIME_WAIT">, donde espera el doble del tiempo de vida
+máximo de un segmento por si el último <input class="h" data-a="ack" data-l="ACK"> se perdió y hay que repetirlo.</p>
+<p class="banco"><b>Ayuda:</b> ACK, CLOSE_WAIT, CLOSED, cinco, conjunto, consumir, cuatro, dos, ESTABLISHED, FIN,
+FIN_WAIT_2, ISN, LAST_ACK, LISTEN, MSS, PSH, RST, separado, SYN, SYN_SENT, TIME_WAIT, tres</p>
+</div>
+
+<div class="cloze">
+<p class="tema">Unidad 8 · TCP — ventana deslizante, flujo y congestión</p>
+<p>Si TCP esperara la confirmación de cada segmento antes de mandar el siguiente, el esquema
+<input class="h" data-a="stop and wait|stop & wait|stop-and-wait" data-l="stop and wait">, el throughput quedaría
+limitado a un MSS por <input class="h" data-a="rtt" data-l="RTT">. Con la ventana deslizante, el emisor puede tener
+hasta W bytes enviados y todavía no <input class="h" data-a="confirmados|reconocidos" data-l="confirmado">, y la
+ventana se <input class="h" data-a="desliza|corre|mueve" data-l="deslizar"> cada vez que llega un ACK. El W efectivo es
+el <input class="h" data-a="minimo|menor" data-l="mínimo"> entre dos ventanas. La primera, la
+<input class="h" data-a="awnd|advertised window" data-l="awnd">, la publica el
+<input class="h" data-a="receptor" data-l="receptor"> en el header según el espacio libre de su buffer: es un control de
+flujo <input class="h" data-a="explicito" data-l="explícito">. La segunda, la
+<input class="h" data-a="cwnd|congestion window" data-l="cwnd">, la calcula el propio emisor para no desbordar las colas
+de los <input class="h" data-a="routers|router" data-l="router">: es el control de congestión. Al arrancar, cwnd vale
+1 MSS, y en slow start crece <input class="h" data-a="exponencialmente" data-l="exponencialmente">: suma un MSS por cada
+ACK y, por lo tanto, se <input class="h" data-a="duplica" data-l="duplicar"> en cada RTT. Cuando alcanza el umbral
+<input class="h" data-a="ssthresh|slow start threshold" data-l="ssthresh">, pasa a congestion avoidance y ya crece
+solo un MSS por RTT.</p>
+<p class="banco"><b>Ayuda:</b> awnd, confirmado, cwnd, deslizar, duplicar, emisor, explícito, exponencialmente,
+implícito, linealmente, máximo, mínimo, MSS, receptor, router, RTO, RTT, ssthresh, stop and wait, switch, triplicar</p>
+</div>
+
+<details class="sol"><summary>Por qué · los huecos más difíciles de TCP</summary><div>
+<ul>
+<li><b>Tres segmentos para 4000 bytes</b>: 4000 / 1460 = 2,74 → hacen falta 3 (1460 + 1460 + 1080).</li>
+<li><b>AN = 5300</b>: el segmento trae los bytes 5000 a 5299; el próximo esperado es 5000 + 300.</li>
+<li><b>CLOSE_WAIT vs TIME_WAIT</b>: CLOSE_WAIT es de quien <i>recibió</i> el primer FIN (espera a su aplicación);
+TIME_WAIT es de quien cerró <i>activamente</i> (espera 2·MSL por si el último ACK se perdió).</li>
+<li><b>awnd explícito, cwnd implícito</b>: el receptor dice su awnd en el header; la congestión nadie la avisa, el emisor
+la infiere por las pérdidas.</li>
+</ul></div></details>
+
+<h2 id="repa-global">Global · De la URL a la página</h2>
+
+<div class="cloze">
+<p class="tema">Global · Integrador</p>
+<p>Cuando escribís http://www.acme.com/ en el navegador, lo primero que hace falta es la dirección IP del servidor, así
+que el host le pregunta al <input class="h" data-a="dns" data-l="DNS"> con un mensaje encapsulado en
+<input class="h" data-a="udp" data-l="UDP">. Si ese servidor está en otra red, la trama se dirige a la dirección MAC
+del default gateway, que el host averigua con <input class="h" data-a="arp" data-l="ARP">. Con la IP en la mano, el
+navegador abre una conexión <input class="h" data-a="tcp" data-l="TCP"> hacia el port
+<input class="h" data-a="80" data-l="80"> del servidor, usando como origen un port
+<input class="h" data-a="efimero" data-l="efímero">, y completa el three-way handshake. Recién entonces manda el pedido
+HTTP <input class="h" data-a="get" data-l="GET">, que tiene que incluir el header
+<input class="h" data-a="host" data-l="Host"> para que el servidor sepa cuál de sus sitios virtuales se pide. En cada
+router del camino (si no hay NAT de por medio), las direcciones
+<input class="h" data-a="ip" data-l="IP"> de origen y destino se mantienen, mientras que las direcciones
+<input class="h" data-a="mac" data-l="MAC"> cambian en cada salto, porque cada enlace arma su propia trama. Si la
+página tiene imágenes, HTTP/1.1 las puede pedir por la misma conexión gracias a las conexiones
+<input class="h" data-a="persistentes" data-l="persistente">. Al final, la conexión TCP se cierra con segmentos
+<input class="h" data-a="fin" data-l="FIN">.</p>
+<p class="banco"><b>Ayuda:</b> 53, 80, 443, ARP, DHCP, DNS, efímero, FIN, GET, Host, ICMP, IP, MAC, persistente, port,
+POST, reservado, RST, stateless, TCP, UDP, User-Agent</p>
+</div>
+
+<div class="cloze-total"></div>
+
+<p>¿Cómo te fue? Si sacaste menos del 70 %, volvé a las partes del apunte de los párrafos que más fallaste y probá
+después el <a href="#repb">Simulacro B</a>, que cubre los subtemas que este no tocó.</p>
+</section>
+
+<section class="parte" id="repb" data-et="Repaso final · B" data-t="Simulacro de parcial B">
+<header class="parte-cab"><p class="eyebrow">Repaso final</p><h1>Simulacro de parcial B</h1></header>
+<div class="caja lee"><p class="caja-tit">Cómo hacerlo</p>
+<p>Catorce párrafos en el orden del examen (unidades 1 a 8 y global), con temas distintos de los del simulacro A. Hacelo
+sin mirar el apunte y con reloj: unos 40 minutos. Cada párrafo tiene su propio banco, con las palabras en su
+<b>forma base</b> (singular, masculino, infinitivo): vos tenés que conjugarlas o concordarlas. Hay distractores, y
+una palabra puede servir para más de un hueco o para ninguno. Al final, apretá «Corregir todo».</p></div>
+<div class="cloze-total"></div>
+
+<h2 id="repb-u1">Unidad 1 · Fundamentos de redes</h2>
+<div class="cloze">
+<p class="tema">Unidad 1 · Multiplexado y conmutación</p>
+<p>Cuando muchas comunicaciones tienen que compartir un mismo enlace, se recurre al <input class="h" data-a="multiplexado" data-l="multiplexado">. En la variante por división de <input class="h" data-a="frecuencia" data-l="frecuencia">, cada flujo ocupa su propia banda todo el tiempo, como las radios de FM; en la división por <input class="h" data-a="tiempo" data-l="tiempo">, cada flujo recibe una ranura <input class="h" data-a="fija|dedicada" data-l="fijo"> en cada ronda, la use o no. La versión <input class="h" data-a="estadística|estadistica" data-l="estadístico"> asigna las ranuras solo a quien tiene datos para enviar, y por eso es la que usan IP y las LAN. En la fibra óptica, el equivalente de dividir por frecuencia es dividir por longitud de <input class="h" data-a="onda" data-l="onda">. Otra cosa muy distinta es la <input class="h" data-a="conmutación" data-l="conmutación">, que ocurre en los sistemas <input class="h" data-a="intermediarios" data-l="intermediario"> y decide por qué enlace sale cada cosa. En la conmutación de <input class="h" data-a="circuitos" data-l="circuito"> se reserva un camino con recursos <input class="h" data-a="dedicados|fijos" data-l="dedicado"> antes de empezar a hablar, lo que garantiza el ancho de banda y un retardo casi constante. En la de <input class="h" data-a="paquetes" data-l="paquete">, los recursos se <input class="h" data-a="comparten" data-l="compartir">: sale más barato, pero los paquetes esperan en <input class="h" data-a="colas" data-l="cola">, el retardo varía de un paquete a otro —eso se llama <input class="h" data-a="jitter" data-l="jitter">— y, si una cola se llena, los paquetes se <input class="h" data-a="descartan|pierden" data-l="descartar">.</p>
+<p class="banco"><b>Ayuda:</b> amplitud, circuito, cola, compartir, conmutación, dedicado, demultiplexado, descartar, determinístico, enlace, estadístico, extremo, fase, fijo, frecuencia, intermediario, jitter, latencia, mensaje, multiplexado, onda, paquete, reservar, throughput, tiempo</p>
+</div>
+<div class="cloze">
+<p class="tema">Unidad 1 · Redes locales</p>
+<p>En una red local, la capa <input class="h" data-a="física|fisica" data-l="físico"> se ocupa de convertir los bits de la trama en señales, mientras que la capa de <input class="h" data-a="enlace" data-l="enlace"> arma las tramas, detecta errores, asigna direcciones y controla el acceso al medio. Ethernet nació sobre un medio <input class="h" data-a="compartido" data-l="compartido"> con topología de bus, y para que las estaciones no hablen todas a la vez usa CSMA/<input class="h" data-a="CD" data-l="CD">: escucha antes de transmitir y, si detecta una <input class="h" data-a="colisión" data-l="colisión">, emite una señal de jam y espera un tiempo <input class="h" data-a="aleatorio" data-l="aleatorio"> antes de reintentar. Cada interfaz se identifica con una dirección MAC de <input class="h" data-a="48|cuarenta y ocho" data-l="48"> bits, y una trama transporta como máximo <input class="h" data-a="1500" data-l="1500"> bytes de datos. Un <input class="h" data-a="hub" data-l="hub"> repite cada señal por todos sus ports, de modo que todos sus equipos quedan en un mismo dominio de colisión; un <input class="h" data-a="switch" data-l="switch">, en cambio, <input class="h" data-a="aprende" data-l="aprender"> qué MAC está detrás de cada port mirando la dirección de <input class="h" data-a="origen" data-l="origen"> de las tramas que recibe, y reenvía solo por el port correcto. Cuando no conoce el destino, reenvía la trama por todos los demás ports, lo que se llama <input class="h" data-a="flooding" data-l="flooding">. Si se arman caminos redundantes entre switches aparecen loops, que se evitan con <input class="h" data-a="STP" data-l="STP">. En WiFi no se pueden detectar las colisiones, así que se usa CSMA/<input class="h" data-a="CA" data-l="CA">.</p>
+<p class="banco"><b>Ayuda:</b> 1460, 1500, 32, 48, 64, aleatorio, aprender, ARP, broadcast, CA, CD, colisión, compartido, dedicado, destino, enlace, filtering, físico, flooding, hub, origen, red, router, STP, switch</p>
+</div>
+<div class="cloze">
+<p class="tema">Unidad 1 · Fragmentación, ARP e ICMP</p>
+<p>Cada tecnología de capa 2 tiene un tamaño máximo de carga llamado <input class="h" data-a="MTU" data-l="MTU">; si un datagrama IP no entra, IP lo <input class="h" data-a="fragmenta" data-l="fragmentar">. Eso lo puede hacer el host de origen o cualquier <input class="h" data-a="router" data-l="router"> del camino, pero el reensamblado ocurre solamente en el <input class="h" data-a="destino|host destino" data-l="destino">. Para reconstruirlo, todos los fragmentos llevan el mismo valor en el campo <input class="h" data-a="Identification" data-l="identification">, el bit MF indica que vienen más fragmentos, y el fragment <input class="h" data-a="offset" data-l="offset"> dice en qué posición va cada uno, medido en unidades de <input class="h" data-a="8|ocho" data-l="8"> bytes. Otro campo del header, el <input class="h" data-a="TTL" data-l="TTL">, se <input class="h" data-a="decrementa|reduce" data-l="decrementar"> en cada salto; al llegar a cero, el datagrama se descarta y se avisa al origen con un mensaje <input class="h" data-a="ICMP" data-l="ICMP">, que es justamente lo que aprovecha traceroute. Para entregar el datagrama dentro de una LAN hace falta la MAC del próximo salto, y eso lo resuelve <input class="h" data-a="ARP" data-l="ARP">: pregunta por <input class="h" data-a="broadcast" data-l="broadcast"> «¿quién tiene esta IP?», recibe una respuesta <input class="h" data-a="unicast" data-l="unicast"> y la guarda en una <input class="h" data-a="caché|cache" data-l="caché"> durante unos minutos. Si el destino está en otra red, la MAC que se averigua no es la del destino sino la del <input class="h" data-a="gateway|default gateway|router" data-l="gateway">.</p>
+<p class="banco"><b>Ayuda:</b> 16, 4, 8, ARP, broadcast, caché, checksum, decrementar, destino, DHCP, DNS, fragmentar, gateway, ICMP, identification, incrementar, MSS, MTU, multicast, offset, origen, protocol, router, switch, TTL, unicast</p>
+</div>
+<details class="sol"><summary>Por qué (los huecos difíciles)</summary><div><p><b>Unidades de 8 bytes:</b> el fragment offset tiene 13 bits y el datagrama puede medir hasta 65535 bytes; medirlo de a 8 bytes hace que alcance. <b>Gateway:</b> ARP solo funciona dentro de la LAN; si el destino es remoto, el datagrama se le entrega al router de salida, así que se pregunta por la MAC de él (aceptamos también «router»).</p></div></details>
+<h2 id="repb-u2">Unidad 2 · Aplicaciones distribuidas</h2>
+<div class="cloze">
+<p class="tema">Unidad 2 · Modelos de interacción y aplicaciones clásicas</p>
+<p>Las aplicaciones distribuidas suelen seguir el modelo <input class="h" data-a="cliente" data-l="cliente">/servidor, donde quien pide tiene que saber de antemano dónde está quien responde; en el modelo <input class="h" data-a="peer" data-l="peer"> to peer, en cambio, no hay jerarquía y cualquiera puede iniciar el diálogo, y en el modelo publisher/<input class="h" data-a="subscriber" data-l="subscriber"> el interesado se registra una vez y después recibe la información sin volver a pedirla. Entre las aplicaciones clásicas, TELNET permite usar una terminal remota sobre TCP, en el puerto <input class="h" data-a="23|veintitrés" data-l="23">, traduciendo cada equipo a una terminal virtual común llamada <input class="h" data-a="NVT" data-l="NVT">. Su gran problema es que todo, incluida la contraseña, viaja en texto <input class="h" data-a="plano" data-l="plano">, y por eso hoy se usa <input class="h" data-a="SSH" data-l="SSH">, en el puerto <input class="h" data-a="22|veintidós" data-l="22">, que <input class="h" data-a="cifra|encripta" data-l="cifrar"> toda la sesión. FTP usa dos conexiones TCP: la de <input class="h" data-a="control" data-l="control">, en el puerto 21, y la de datos. En modo <input class="h" data-a="activo" data-l="activo">, es el <input class="h" data-a="servidor" data-l="servidor"> quien abre la conexión de datos desde su puerto 20 hacia el cliente; en modo pasivo, el cliente envía PASV y es él quien abre esa conexión. TFTP, en cambio, corre sobre <input class="h" data-a="UDP" data-l="UDP">, en el puerto 69, y no tiene ningún mecanismo de <input class="h" data-a="autenticación|autenticacion" data-l="autenticación">.</p>
+<p class="banco"><b>Ayuda:</b> 20, 21, 22, 23, 25, activo, autenticación, binario, cifrar, cliente, comprimir, control, datos, NVT, pasivo, peer, plano, PORT, publisher, servidor, SMTP, SSH, subscriber, TCP, UDP</p>
+</div>
+<details class="sol"><summary>Por qué (los huecos difíciles)</summary><div><p><b>Activo vs pasivo:</b> los nombres se refieren al <i>servidor</i>. En activo el servidor «sale» a conectarse al cliente (desde el port 20); en pasivo el servidor espera y el cliente abre la conexión de datos, lo que funciona mejor detrás de firewalls y NAT.</p></div></details>
+<h2 id="repb-u3">Unidad 3 · DNS</h2>
+<div class="cloze">
+<p class="tema">Unidad 3 · El mensaje DNS y las transferencias de zona</p>
+<p>Un mensaje DNS tiene siempre la misma estructura: un header y cuatro secciones, que son question, answer, <input class="h" data-a="authority" data-l="authority"> y additional. En el header, el bit <input class="h" data-a="QR" data-l="QR"> distingue una consulta (0) de una respuesta (1); el bit <input class="h" data-a="AA" data-l="AA"> indica que quien responde es autoritativo para la zona; el bit <input class="h" data-a="RD" data-l="RD"> lo pone el cliente para pedir resolución recursiva, y el bit <input class="h" data-a="RA" data-l="RA"> lo pone el servidor si la ofrece. El campo <input class="h" data-a="RCODE" data-l="RCODE"> informa errores: por ejemplo, el valor 3, NXDOMAIN, significa que el nombre consultado no <input class="h" data-a="existe" data-l="existir">. Las consultas normales viajan sobre <input class="h" data-a="UDP" data-l="UDP"> al puerto <input class="h" data-a="53|cincuenta y tres" data-l="53">, porque son cortas y no vale la pena abrir una conexión. En cambio, la <input class="h" data-a="transferencia" data-l="transferencia"> de zona, con la que el servidor <input class="h" data-a="secundario" data-l="secundario"> copia los registros del primario, usa <input class="h" data-a="TCP" data-l="TCP">. Para saber si tiene que copiar, el secundario compara el número de <input class="h" data-a="serie" data-l="serie"> del registro <input class="h" data-a="SOA" data-l="SOA">: si en el primario es mayor, la zona cambió.</p>
+<p class="banco"><b>Ayuda:</b> 25, 53, 67, AA, authority, caching, delegación, existir, MX, NS, OPCODE, primario, QR, RA, RCODE, RD, responder, secundario, serie, SOA, TC, TCP, transferencia, TTL, UDP</p>
+</div>
+<details class="sol"><summary>Por qué (los huecos difíciles)</summary><div><p><b>RD vs RA:</b> RD (<i>recursion desired</i>) es un pedido del que pregunta; RA (<i>recursion available</i>) es una capacidad del que responde. <b>AA</b> va en la respuesta y vale 1 solo si el servidor administra esa zona. <b>Serial del SOA:</b> el secundario solo dispara el zone transfer si el serial del primario es mayor que el suyo.</p></div></details>
+<div class="cloze">
+<p class="tema">Unidad 3 · Resolución inversa y delegación</p>
+<p>Además de traducir nombres a direcciones, DNS permite el camino inverso: dada una IP, obtener su nombre. Para eso existe la zona especial <input class="h" data-a="in-addr.arpa" data-l="in-addr.arpa">, donde la dirección se escribe con los octetos <input class="h" data-a="invertidos|al reves|al revés" data-l="invertido">, porque en un nombre DNS lo más general va a la <input class="h" data-a="derecha" data-l="derecha">, mientras que en una IP va a la izquierda; el registro que contiene la respuesta es de tipo <input class="h" data-a="PTR" data-l="PTR">. Cuando una zona <input class="h" data-a="padre" data-l="padre"> delega un subdominio, publica registros <input class="h" data-a="NS" data-l="NS"> con los nombres de los servidores de la zona hija; si esos nombres están dentro de la misma zona delegada, también hacen falta registros <input class="h" data-a="glue" data-l="glue">, es decir, registros A con sus direcciones, para evitar una dependencia <input class="h" data-a="circular" data-l="circular">. Si el padre apunta a un servidor que en realidad no es autoritativo para esa zona, se produce una <input class="h" data-a="lame" data-l="lame"> delegation. A nivel mundial, la asignación de nombres la coordina <input class="h" data-a="ICANN" data-l="ICANN">, y en la Argentina los dominios .ar los administra <input class="h" data-a="NIC|NIC.ar|NIC Argentina" data-l="NIC">. Para consultar quién registró un dominio se usa <input class="h" data-a="WHOIS" data-l="WHOIS"> o su sucesor RDAP, y para hacer consultas DNS a mano, nslookup o <input class="h" data-a="dig" data-l="dig">.</p>
+<p class="banco"><b>Ayuda:</b> A, circular, CNAME, derecha, dig, glue, hijo, ICANN, in-addr.arpa, invertido, ip6.arpa, izquierda, LACNIC, lame, MX, NIC, NS, ordenado, padre, ping, PTR, recursivo, traceroute, WHOIS</p>
+</div>
+<details class="sol"><summary>Por qué (los huecos difíciles)</summary><div><p><b>Al revés:</b> para 190.210.249.63 se consulta 63.249.210.190.in-addr.arpa, porque la delegación DNS va de derecha a izquierda (arpa → in-addr → 190 → …), igual que la jerarquía de la IP va de izquierda a derecha. <b>LACNIC</b> es un distractor: asigna bloques de <i>direcciones IP</i> en América Latina, no nombres.</p></div></details>
+<h2 id="repb-u4">Unidad 4 · Mail</h2>
+<div class="cloze">
+<p class="tema">Unidad 4 · Formato del mensaje, MIME y acceso al buzón</p>
+<p>Un correo tiene tres partes. El <input class="h" data-a="envelope|sobre" data-l="envelope">, formado por los comandos MAIL FROM y RCPT TO, es lo que usan los servidores para entregar el mensaje, como el sobre de una carta. Los <input class="h" data-a="headers|encabezados" data-l="header">, como From, To y Subject, son los que muestra el cliente de correo, y el <input class="h" data-a="body|cuerpo" data-l="body"> es el contenido; headers y body juntos forman el content. Originalmente SMTP solo transportaba texto ASCII de <input class="h" data-a="7|siete" data-l="7"> bits, sin acentos ni archivos binarios; para superar ese límite surgió <input class="h" data-a="MIME" data-l="MIME">, que agrega headers como Content-<input class="h" data-a="Type" data-l="type">, con el formato tipo/subtipo, y Content-Transfer-Encoding, cuyo valor puede ser, por ejemplo, <input class="h" data-a="base64" data-l="base64">. Para leer el correo, el usuario puede usar <input class="h" data-a="POP3|POP" data-l="POP3">, en el puerto 110, que <input class="h" data-a="descarga" data-l="descargar"> los mensajes y normalmente los borra del servidor, o <input class="h" data-a="IMAP|IMAP4" data-l="IMAP">, en el puerto <input class="h" data-a="143" data-l="143">, que los mantiene en el servidor y <input class="h" data-a="sincroniza" data-l="sincronizar"> su estado entre varios dispositivos. Como SMTP no verifica al remitente, se agregaron controles: <input class="h" data-a="SPF" data-l="SPF"> publica en DNS qué servidores pueden enviar correo en nombre del dominio, DKIM firma el mensaje con una clave <input class="h" data-a="privada" data-l="privado"> y DMARC define qué hacer si esas verificaciones fallan.</p>
+<p class="banco"><b>Ayuda:</b> 143, 25, 7, 8, base64, body, borrar, descargar, envelope, header, IMAP, length, MIME, POP3, privado, público, sincronizar, SMTP, SPF, subir, TLS, trailer, type, UTF-8</p>
+</div>
+<details class="sol"><summary>Por qué (los huecos difíciles)</summary><div><p><b>Clave privada:</b> DKIM firma con la clave privada del dominio remitente; el receptor verifica con la clave pública, que está publicada en DNS. <b>Envelope vs headers:</b> el envelope lo usan los MTA para entregar; los headers los lee el MUA.</p></div></details>
+<h2 id="repb-u5">Unidad 5 · HTTP</h2>
+<div class="cloze">
+<p class="tema">Unidad 5 · Versiones de HTTP, caché y HTTPS</p>
+<p>En HTTP/<input class="h" data-a="1.0" data-l="1.0">, cada objeto de una página requería abrir y cerrar su propia conexión TCP, lo que multiplicaba los handshakes. HTTP/1.1 introdujo las conexiones <input class="h" data-a="persistentes" data-l="persistente">, que reutilizan una misma conexión para varios pedidos. Ojo: eso no hace que el protocolo deje de ser <input class="h" data-a="stateless" data-l="stateless">, porque el servidor sigue sin recordar los pedidos anteriores. HTTP/1.1 también hizo obligatorio el header <input class="h" data-a="Host" data-l="host">, que permite alojar muchos sitios con una sola IP, los llamados hosts <input class="h" data-a="virtuales" data-l="virtual">. Para ahorrar transferencias, un cliente o un <input class="h" data-a="proxy" data-l="proxy"> puede enviar If-Modified-Since: si el recurso no cambió, el servidor responde <input class="h" data-a="304" data-l="304"> Not Modified, sin cuerpo. HTTP/2 mantiene TCP pero <input class="h" data-a="multiplexa" data-l="multiplexar"> varias transacciones simultáneas sobre la misma conexión y comprime los headers con <input class="h" data-a="HPACK" data-l="HPACK">. HTTP/3 abandona TCP y corre sobre <input class="h" data-a="QUIC" data-l="QUIC">, que a su vez va sobre <input class="h" data-a="UDP" data-l="UDP">. Por último, HTTPS agrega cifrado con <input class="h" data-a="TLS" data-l="TLS"> y usa el puerto <input class="h" data-a="443" data-l="443">; si hay un proxy en el medio, el cliente le pide con el método <input class="h" data-a="CONNECT" data-l="CONNECT"> que abra un túnel hasta el servidor.</p>
+<p class="banco"><b>Ayuda:</b> 1.0, 200, 304, 404, 443, 80, CONNECT, cookie, GET, host, HPACK, multiplexar, persistente, POST, proxy, QUIC, Referer, serializar, stateful, stateless, TCP, TLS, UDP, virtual</p>
+</div>
+<details class="sol"><summary>Por qué (los huecos difíciles)</summary><div><p><b>Persistente no es stateful:</b> la conexión persistente es una optimización de transporte (menos handshakes); el estado entre pedidos solo se logra con mecanismos como las cookies. <b>CONNECT:</b> el proxy no puede leer el tráfico cifrado, así que solo abre un túnel TCP y deja que TLS ocurra de punta a punta.</p></div></details>
+<h2 id="repb-u6">Unidad 6 · DHCP</h2>
+<div class="cloze">
+<p class="tema">Unidad 6 · Lease, renovación y relay</p>
+<p>Un servidor DHCP no regala direcciones: las <input class="h" data-a="presta|asigna|alquila" data-l="prestar"> por un tiempo llamado <input class="h" data-a="lease" data-l="lease">, que se informa en el mensaje Ack. Antes de que venza, el cliente puede <input class="h" data-a="renovarlo|renovarla|renovar|extenderlo|extenderla" data-l="renovar"> enviando un nuevo <input class="h" data-a="Request" data-l="request">; si ya no necesita la dirección, la devuelve con un <input class="h" data-a="Release" data-l="release">. Si un equipo vuelve a conectarse en otra red y pide renovar una dirección que allí no es válida, el servidor le responde con un <input class="h" data-a="NAck|NAK" data-l="NAck">, y el cliente arranca de nuevo desde el <input class="h" data-a="Discover" data-l="discover">. Como esos primeros mensajes son <input class="h" data-a="broadcast" data-l="broadcast"> y los routers no los reenvían, cuando el servidor está en otra red hace falta un <input class="h" data-a="relay" data-l="relay"> agent, que le reenvía los pedidos al servidor y completa el campo <input class="h" data-a="giaddr" data-l="giaddr"> con su propia dirección. Dentro del mensaje, <input class="h" data-a="ciaddr" data-l="ciaddr"> es la dirección que el cliente ya tiene, <input class="h" data-a="yiaddr" data-l="yiaddr"> es la que el servidor le asigna, y el XID es un número <input class="h" data-a="aleatorio" data-l="aleatorio"> que permite emparejar los mensajes de una misma transacción.</p>
+<p class="banco"><b>Ayuda:</b> ack, aleatorio, broadcast, chaddr, ciaddr, discover, giaddr, lease, NAck, offer, prestar, proxy, relay, release, renovar, request, secuencial, siaddr, unicast, vender, yiaddr</p>
+</div>
+<details class="sol"><summary>Por qué (los huecos difíciles)</summary><div><p><b>giaddr</b> (<i>gateway IP address</i>) le dice al servidor desde qué red llegó el pedido, para que asigne una dirección de ese rango. <b>ciaddr vs yiaddr:</b> «c» de <i>client</i> (la que ya tiene), «y» de <i>your</i> (la que te doy).</p></div></details>
+<h2 id="repb-u7">Unidad 7 · UDP</h2>
+<div class="cloze">
+<p class="tema">Unidad 7 · Cuándo conviene UDP</p>
+<p>UDP le agrega a IP poco más que los números de <input class="h" data-a="puerto|port" data-l="puerto">: no establece conexión, no retransmite ni reordena, y su header ocupa apenas <input class="h" data-a="8|ocho" data-l="8"> bytes. Justamente por eso conviene en varios casos. DNS lo usa porque una consulta y su respuesta caben en un solo datagrama, y abrir una conexión costaría más que la consulta misma; si no llega la respuesta, es el propio <input class="h" data-a="resolver|cliente" data-l="resolver"> el que vuelve a preguntar. DHCP lo necesita porque el cliente todavía no tiene dirección <input class="h" data-a="IP" data-l="IP"> y tiene que hablar por broadcast, algo que <input class="h" data-a="TCP" data-l="TCP"> no permite. En voz y video en tiempo real se prefiere perder un paquete antes que esperar su <input class="h" data-a="retransmisión|retransmision" data-l="retransmisión">, que llegaría tarde. Como el campo Length tiene <input class="h" data-a="16|dieciséis" data-l="16"> bits, un datagrama UDP puede medir hasta 65535 bytes; si supera el MTU, IP lo fragmenta y solo el <input class="h" data-a="primer|primero" data-l="primero"> fragmento lleva el header UDP, así que, si se pierde cualquier fragmento, se descarta el datagrama <input class="h" data-a="entero|completo" data-l="entero">. Entre los servicios conocidos sobre UDP están DNS, en el puerto <input class="h" data-a="53" data-l="53">; DHCP, en el 67 y el <input class="h" data-a="68" data-l="68">; TFTP, en el <input class="h" data-a="69" data-l="69">, y SNMP, en el 161 y el 162.</p>
+<p class="banco"><b>Ayuda:</b> 16, 20, 25, 32, 53, 66, 68, 69, 8, 80, checksum, conexión, entero, fragmento, IP, MAC, primero, puerto, resolver, retransmisión, servidor, TCP, último</p>
+</div>
+<details class="sol"><summary>Por qué (los huecos difíciles)</summary><div><p><b>Header de 8 bytes:</b> son 4 campos de 16 bits (source port, destination port, length, checksum). <b>Primer fragmento:</b> los demás fragmentos no traen ports, por eso el destino no puede entregar nada hasta reensamblar todo.</p></div></details>
+<h2 id="repb-u8">Unidad 8 · TCP</h2>
+<div class="cloze">
+<p class="tema">Unidad 8 · ARQ y temporizadores</p>
+<p>Para recuperar los segmentos perdidos, TCP usa un esquema <input class="h" data-a="ARQ" data-l="ARQ">: el emisor guarda una copia de cada segmento y arranca un temporizador, y si el <input class="h" data-a="ACK" data-l="ACK"> no llega antes de que venza, lo retransmite. Los segmentos que llegan alterados se detectan con el <input class="h" data-a="checksum" data-l="checksum"> y se descartan en silencio, así que para el emisor es como si se hubieran perdido. El tiempo de espera, llamado <input class="h" data-a="RTO" data-l="RTO">, tiene que ser <input class="h" data-a="mayor" data-l="mayor"> que el RTT: si es demasiado corto se producen retransmisiones <input class="h" data-a="innecesarias" data-l="innecesario">, y si es demasiado largo el canal queda <input class="h" data-a="subutilizado|ocioso" data-l="subutilizado">. Como el RTT varía, TCP lo estima con un promedio <input class="h" data-a="ponderado" data-l="ponderado">: cada nueva medición se combina con el valor anterior usando un factor α, y el RTO se obtiene multiplicando ese RTT suavizado por un factor <input class="h" data-a="β|beta" data-l="β">, típicamente 2. El algoritmo de <input class="h" data-a="Karn" data-l="Karn"> agrega dos reglas: no se mide el RTT de los segmentos <input class="h" data-a="retransmitidos" data-l="retransmitido">, porque no se sabe a cuál de los envíos corresponde el ACK, y después de cada timeout el RTO se <input class="h" data-a="duplica" data-l="duplicar">, lo que se conoce como backoff exponencial.</p>
+<p class="banco"><b>Ayuda:</b> ACK, aritmético, ARQ, checksum, CRC, duplicar, innecesario, Jacobson, Karn, mayor, menor, MSS, perdido, ponderado, reducir, retransmitido, RTO, sobrecargado, subutilizado, SYN, β</p>
+</div>
+<details class="sol"><summary>Por qué (los huecos difíciles)</summary><div><p><b>Karn:</b> si se mide el RTT de un segmento retransmitido, el ACK puede ser del envío original (el RTT sale inflado) o de la retransmisión (sale achicado). Por eso se ignora esa medición y, mientras tanto, se duplica el RTO.</p></div></details>
+<div class="cloze">
+<p class="tema">Unidad 8 · Reacción ante pérdidas</p>
+<p>TCP interpreta la pérdida de segmentos como una señal de <input class="h" data-a="congestión|congestion" data-l="congestión">, y reacciona distinto según cómo la detecta. Si vence el RTO, asume una congestión <input class="h" data-a="severa" data-l="severo">: fija el ssthresh en la <input class="h" data-a="mitad" data-l="mitad"> de la cwnd que tenía, baja la cwnd a <input class="h" data-a="1|un|uno" data-l="1"> MSS y vuelve a <input class="h" data-a="slow" data-l="slow"> start. Si en cambio recibe tres ACKs <input class="h" data-a="duplicados" data-l="duplicado">, todos con el mismo AN, deduce que los segmentos posteriores siguen llegando y que se perdió uno solo, así que lo retransmite de inmediato sin esperar el timeout: eso es el fast <input class="h" data-a="retransmit" data-l="retransmit">. La versión <input class="h" data-a="Tahoe" data-l="Tahoe">, aun así, vuelve a cwnd = 1 MSS, mientras que <input class="h" data-a="Reno" data-l="Reno"> agrega el fast <input class="h" data-a="recovery" data-l="recovery">: pone la cwnd igual al nuevo <input class="h" data-a="ssthresh" data-l="ssthresh"> y sigue directamente en congestion <input class="h" data-a="avoidance" data-l="avoidance">, donde la ventana crece de forma <input class="h" data-a="lineal" data-l="lineal">, un MSS por RTT, en lugar de duplicarse.</p>
+<p class="banco"><b>Ayuda:</b> 1, 2, acumulativo, avoidance, awnd, congestión, doble, duplicado, error, exponencial, flujo, lineal, mitad, recovery, Reno, retransmit, severo, slow, ssthresh, suave, Tahoe, Vegas</p>
+</div>
+<details class="sol"><summary>Por qué (los huecos difíciles)</summary><div><p><b>Timeout vs 3 dup ACKs:</b> el timeout significa que no vuelve nada (congestión severa); los ACKs duplicados significan que los segmentos siguientes sí llegan, así que la red no está tan mal. Por eso Reno no vuelve a 1 MSS. La slide dice «más de 3 ACKs duplicados»; Kurose dice 3. En el parcial, si te piden el número, usá el de la cátedra si lo dan en el banco.</p></div></details>
+<div class="cloze">
+<p class="tema">Unidad 8 · Ventana, throughput y redes largas</p>
+<p>Con ventana deslizante, el emisor puede tener hasta W bytes en vuelo sin confirmar, así que el throughput queda acotado por W dividido el <input class="h" data-a="RTT" data-l="RTT">. Si la ventana es mayor o igual que el producto entre la capacidad del canal y el RTT, el llamado bandwidth-<input class="h" data-a="delay" data-l="delay"> product, el emisor nunca se queda esperando y el throughput es igual a la <input class="h" data-a="capacidad|tasa|velocidad" data-l="capacidad"> del canal; si es menor, el canal queda <input class="h" data-a="ocioso|inactivo|subutilizado" data-l="ocioso"> parte del tiempo. El problema es que el campo Window del header tiene <input class="h" data-a="16|dieciséis" data-l="16"> bits, así que la awnd no puede superar los 64 <input class="h" data-a="KiB" data-l="KiB">. En un enlace con un RTT de 100 ms, eso limita el throughput a unos <input class="h" data-a="5|5,2|5.2|cinco" data-l="5"> Mbps, sin importar cuán rápido sea el enlace. Las redes cuyo producto supera ese límite se llaman LFN, Long <input class="h" data-a="Fat" data-l="fat"> Networks. La solución es la opción Window <input class="h" data-a="Scale" data-l="scale">, que se negocia durante el <input class="h" data-a="handshake|3-way handshake" data-l="handshake">: define un factor entre 0 y <input class="h" data-a="14|catorce" data-l="14">, y la ventana efectiva se calcula multiplicando la awnd por 2 elevado a ese factor, hasta un máximo de 1 <input class="h" data-a="GiB" data-l="GiB">.</p>
+<p class="banco"><b>Ayuda:</b> 10, 14, 16, 32, 5, 50, 8, capacidad, cierre, delay, fat, GiB, handshake, KiB, MiB, MSS, ocioso, RTT, saturado, scale, size</p>
+</div>
+<details class="sol"><summary>Por qué (los huecos difíciles)</summary><div><p><b>La cuenta del 5:</b> 64 KiB = 65536 bytes = 524288 bits; 524288 bits / 0,1 s ≈ 5,2 Mbps. <b>Máximo:</b> 2<sup>16</sup> × 2<sup>14</sup> = 2<sup>30</sup> bytes = 1 GiB.</p></div></details>
+<h2 id="repb-global">Global · Integrador</h2>
+<div class="cloze">
+<p class="tema">Global · Una notebook nueva pide una página</p>
+<p>Imaginemos una notebook que se conecta por primera vez a la red de la facultad y abre http://www.udesa.edu.ar. Como todavía no tiene dirección, envía un Discover por <input class="h" data-a="broadcast" data-l="broadcast"> y, mediante <input class="h" data-a="DHCP" data-l="DHCP">, obtiene su IP, la máscara, el <input class="h" data-a="gateway|default gateway" data-l="gateway"> por defecto y el servidor DNS. Para resolver el nombre le pregunta al servidor DNS local, que en este caso está en otra red; por eso, antes de mandar nada, usa <input class="h" data-a="ARP" data-l="ARP"> para averiguar la dirección <input class="h" data-a="MAC" data-l="MAC"> del gateway. La consulta DNS viaja en un datagrama <input class="h" data-a="UDP" data-l="UDP"> al puerto 53 y es <input class="h" data-a="recursiva" data-l="recursivo">: es el servidor local el que se encarga de preguntar de forma <input class="h" data-a="iterativa" data-l="iterativo"> a la raíz, al TLD .ar y al servidor autoritativo. Con la IP ya conocida, la notebook abre una conexión <input class="h" data-a="TCP" data-l="TCP"> mediante un three-way handshake hacia el puerto <input class="h" data-a="80|ochenta" data-l="80"> del servidor, usando como origen un puerto <input class="h" data-a="efímero|efimero" data-l="efímero">, y envía un GET que incluye el header <input class="h" data-a="Host" data-l="Host">. En todo el camino, las direcciones <input class="h" data-a="IP" data-l="IP"> de origen y destino se mantienen, mientras que las direcciones MAC <input class="h" data-a="cambian" data-l="cambiar"> en cada salto.</p>
+<p class="banco"><b>Ayuda:</b> 443, 80, ARP, broadcast, cambiar, cookie, DHCP, efímero, gateway, Host, ICMP, IP, iterativo, MAC, mantener, recursivo, Referer, reservado, SMTP, switch, TCP, UDP, unicast</p>
+</div>
+<details class="sol"><summary>Por qué (los huecos difíciles)</summary><div><p><b>¿Por qué ARP del gateway y no del servidor DNS?</b> Porque el DNS local está en otra red: el datagrama sale por el router, así que la MAC que hace falta es la del router. <b>IP vs MAC:</b> la IP es de extremo a extremo; la MAC solo vale dentro de cada enlace (salvo que haya NAT, que no es tema de este parcial).</p></div></details>
+<div class="cloze-total"></div>
+</section>
+
+<section class="parte" id="repc" data-et="Repaso final · C" data-t="Desafíos cruzados">
+<header class="parte-cab"><p class="eyebrow">Repaso final · C</p><h1>Desafíos cruzados</h1></header>
+<div class="caja lee"><p class="caja-tit">Cómo hacerlo</p>
+<p>Doce párrafos, el nivel más alto del repaso. Seis comparan temas que se confunden, cuatro esconden cuentas
+dentro del texto y dos plantean un «¿qué pasa si…?». Hacelos <b>sin mirar el apunte</b>. Como en el parcial, el banco
+de cada párrafo trae las palabras en su <b>forma base</b> (singular, masculino, infinitivo): tenés que conjugarlas
+vos. Hay distractores, y una palabra puede servir para más de un hueco o para ninguno. Para los numéricos, hacé la
+cuenta en un papel antes de escribir.</p></div>
+<div class="cloze-total"></div>
+<h2 id="repc-udp-tcp">UDP frente a TCP</h2>
+<div class="cloze">
+<p class="tema">Comparativo · Unidades 7 y 8</p>
+<p>Cuando una aplicación elige su protocolo de transporte, la decisión entre UDP y TCP es un compromiso entre simplicidad y garantías. UDP es un protocolo no <input class="h" data-a="orientado" data-l="orientado"> a conexión: no hay acuerdo previo y cada <input class="h" data-a="datagrama" data-l="datagrama"> se envía de forma independiente, con un header fijo de apenas <input class="h" data-a="8|ocho" data-l="8"> bytes que solo agrega ports, longitud y checksum. TCP, en cambio, abre la conexión con un intercambio de <input class="h" data-a="tres|3" data-l="3"> segmentos y mantiene <input class="h" data-a="estado" data-l="estado"> en ambos extremos, lo que le permite numerar los <input class="h" data-a="bytes|octetos|byte" data-l="byte">, confirmar con ACK <input class="h" data-a="acumulativos|acumulativo" data-l="acumulativo"> y <input class="h" data-a="retransmitir|reenviar" data-l="retransmitir"> lo que se pierde. Esa maquinaria tiene un costo: el header TCP mínimo ocupa <input class="h" data-a="20|veinte" data-l="20"> bytes y el emisor no puede mandar más de lo que le permiten las ventanas. Por eso servicios como DNS o DHCP prefieren UDP: sus intercambios son de una pregunta y una <input class="h" data-a="respuesta" data-l="respuesta">, y si algo se pierde es la <input class="h" data-a="aplicación" data-l="aplicación"> la que vuelve a preguntar tras un timeout. En el streaming en vivo ocurre algo parecido: un dato que llega <input class="h" data-a="tarde" data-l="tarde"> ya no sirve, así que retransmitirlo sería inútil. Los dos protocolos, de todos modos, comparten dos rasgos: ambos son <input class="h" data-a="end to end|extremo a extremo" data-l="extremo a extremo"> y ambos calculan el checksum incluyendo un <input class="h" data-a="pseudo-header|pseudoheader|pseudo header|pseudo encabezado" data-l="pseudo-header"> con las direcciones IP.</p>
+<p class="banco"><b>Ayuda:</b> 16, 2, 20, 3, 4, 40, 8, acumulativo, aplicación, byte, conectado, datagrama, estado, extremo a extremo, hop by hop, ignorar, orientado, pseudo-header, respuesta, retransmitir, router, segmento, selectivo, sesión, tarde, temprano, trailer, trama</p>
+</div>
+<details class="sol"><summary>Por qué (los huecos tramposos)</summary><div><p><b>«no orientado a conexión»</b>: la frase de la cátedra es «no conectado» u «orientado a conexión»; acá el texto ya trae el «no» y «a conexión», así que el hueco es <i>orientado</i>. <b>8 vs 20</b>: header UDP de 4 campos × 16 bits = 8 bytes; header TCP sin opciones = 20 bytes. <b>«es la aplicación la que vuelve a preguntar»</b>: con UDP la confiabilidad, si hace falta, la pone el programa (el resolver DNS retransmite tras un timeout). <b>Pseudo-header</b>: lo usan los dos checksums para detectar entregas a la IP equivocada.</p></div></details>
+<h2 id="repc-flujo-congestion">Control de flujo frente a control de congestión</h2>
+<div class="cloze">
+<p class="tema">Comparativo · Unidad 8</p>
+<p>TCP limita cuántos bytes puede tener «en vuelo» con dos ventanas que resuelven problemas distintos. El control de <input class="h" data-a="flujo" data-l="flujo"> protege al <input class="h" data-a="receptor" data-l="receptor">: evita desbordar su <input class="h" data-a="buffer|búfer|buffer de recepción" data-l="buffer">, y por eso es <input class="h" data-a="explícito|explicito" data-l="explícito">, ya que el propio receptor anuncia en cada segmento cuánto espacio libre tiene, en el campo Window: la llamada <input class="h" data-a="awnd" data-l="awnd">. El control de <input class="h" data-a="congestión" data-l="congestión">, en cambio, protege a las <input class="h" data-a="colas" data-l="cola"> de los routers del camino. Como los routers no le avisan nada a TCP, el emisor tiene que inferir la congestión a partir de <input class="h" data-a="pérdidas|perdidas" data-l="pérdida"> —el vencimiento del RTO o la llegada de ACKs duplicados—, y por eso se dice que es <input class="h" data-a="implícito|implicito" data-l="implícito">. Con esa información el emisor calcula su propia ventana, la <input class="h" data-a="cwnd" data-l="cwnd">, que crece mientras no hay pérdidas y se <input class="h" data-a="reduce|achica|reducen" data-l="reducir"> cuando las detecta. En cada momento la ventana efectiva es el <input class="h" data-a="mínimo|minimo" data-l="mínimo"> entre ambas, y como el throughput queda acotado por W/<input class="h" data-a="RTT" data-l="RTT">, achicar cualquiera de las dos baja la velocidad de envío.</p>
+<p class="banco"><b>Ayuda:</b> aumentar, awnd, buffer, cola, congestión, cwnd, emisor, enlace, error, explícito, flujo, implícito, máximo, mínimo, MSS, pérdida, promedio, receptor, reducir, RTO, RTT, secuencia, ssthresh, switch, TTL</p>
+</div>
+<details class="sol"><summary>Por qué (los huecos tramposos)</summary><div><p>La pareja a no mezclar: <b>flujo → receptor → buffer → explícito → awnd</b>; <b>congestión → red (colas de los routers) → implícito → cwnd</b>. Es «explícito» porque hay un campo en el header que lo dice; «implícito» porque nadie lo dice: se deduce de las pérdidas. <b>W = min(awnd, cwnd)</b> (no el máximo: hay que respetar los dos límites a la vez). <b>RTT</b> y no RTO: el throughput con ventana es W/RTT.</p></div></details>
+<h2 id="repc-hub-switch-router">Hub, switch y router</h2>
+<div class="cloze">
+<p class="tema">Comparativo · Unidad 1</p>
+<p>Los tres dispositivos interconectan equipos, pero trabajan en capas distintas y eso lo cambia todo. Un hub es un repetidor de varios ports: opera en la capa <input class="h" data-a="física|1|fisica" data-l="físico">, regenera la señal y la copia por todos sus ports, de modo que todos los equipos conectados comparten un mismo dominio de <input class="h" data-a="colisión|colision" data-l="colisión">: si dos transmiten a la vez, sus señales chocan. Un switch trabaja en la capa <input class="h" data-a="2|dos|de enlace|enlace" data-l="2">: hace store and forward, mira la dirección <input class="h" data-a="MAC" data-l="MAC"> destino de cada trama y la reenvía solo por el port donde aprendió esa dirección; si no la conoce, o si es un broadcast, la reenvía por todos los demás ports, lo que se llama <input class="h" data-a="flooding|inundación" data-l="flooding">. Así, cada port del switch es un dominio de colisión <input class="h" data-a="separado|distinto|propio|independiente" data-l="separado">, aunque todos siguen compartiendo el mismo dominio de <input class="h" data-a="broadcast|difusión" data-l="broadcast">. Para cortar ese dominio hace falta un <input class="h" data-a="router" data-l="router">, que opera en capa 3 y decide en función de la dirección <input class="h" data-a="IP" data-l="IP"> destino, consultando su tabla de <input class="h" data-a="ruteo|enrutamiento|rutas" data-l="ruteo">. Otra diferencia aparece con caminos redundantes: los switches ejecutan <input class="h" data-a="STP" data-l="STP"> para evitar <input class="h" data-a="loops|loop|bucles|lazos" data-l="loop">, quedándose con un único árbol que no necesariamente es el mejor camino, mientras que el router elige el <input class="h" data-a="mejor" data-l="mejor"> camino según la métrica.</p>
+<p class="banco"><b>Ayuda:</b> 2, 3, ARP, broadcast, colisión, compartido, filtering, físico, flooding, ICMP, IP, learning, lógico, loop, MAC, mejor, MTU, peor, puerto, router, ruteo, separado, STP, TTL, unicast</p>
+</div>
+<details class="sol"><summary>Por qué (los huecos tramposos)</summary><div><p><b>Hub = capa 1</b>: no entiende direcciones, solo bits; todo es un único dominio de colisión. <b>Switch = capa 2</b>: separa dominios de <i>colisión</i> (uno por port), pero <b>no</b> los de <i>broadcast</i>. Solo un <b>router</b> (capa 3) corta el dominio de broadcast. Trampa del hueco del flooding: «broadcast» es el <i>tipo de trama</i>; reenviar por todos los ports una trama de destino desconocido es <i>flooding</i>. <b>STP</b> deja un árbol sin loops, no el mejor camino; elegir el mejor camino es tarea del ruteo IP.</p></div></details>
+<h2 id="repc-dominio-zona">Dominio, zona y delegación: el caso udesa.edu.ar</h2>
+<div class="cloze">
+<p class="tema">Comparativo · Unidad 3</p>
+<p>Tomemos el nombre www.udesa.edu.ar. Leído de derecha a izquierda, recorre el árbol del DNS desde la <input class="h" data-a="raíz|raiz" data-l="raíz">, pasando por el TLD <input class="h" data-a="ar|.ar" data-l="ar">, después por edu y finalmente por udesa; cada parte separada por puntos es una <input class="h" data-a="etiqueta|label" data-l="etiqueta">, y el nombre completo terminado en punto es un <input class="h" data-a="FQDN" data-l="FQDN">. El <input class="h" data-a="dominio" data-l="dominio"> edu.ar es todo el subárbol que cuelga de ese nodo, incluidos udesa.edu.ar y las demás universidades. Pero ARIU, que administra edu.ar, no gestiona todo ese subárbol: le <input class="h" data-a="delegó|delego|delega" data-l="delegar"> la autoridad sobre udesa.edu.ar a la propia universidad. Por eso la <input class="h" data-a="zona" data-l="zona"> de ARIU es edu.ar menos las partes delegadas. La delegación se expresa con registros <input class="h" data-a="NS" data-l="NS"> en la zona <input class="h" data-a="padre" data-l="padre">, que apuntan a los servidores autoritativos de la zona hija. Si esos servidores tienen nombres que caen dentro de la misma zona que se delega, el padre tiene que publicar además registros <input class="h" data-a="glue" data-l="glue"> con sus direcciones IP, para romper una dependencia <input class="h" data-a="circular" data-l="circular">. Y si el padre delega en un servidor que no está configurado como autoritativo para esa zona, se produce una <input class="h" data-a="lame" data-l="lame"> delegation.</p>
+<p class="banco"><b>Ayuda:</b> ar, circular, CNAME, com, delegar, dominio, etiqueta, FQDN, glue, hijo, iterativo, lame, MX, nodo, NS, padre, primario, PTR, raíz, recursivo, replicar, SOA, TLD, zona</p>
+</div>
+<details class="sol"><summary>Por qué (los huecos tramposos)</summary><div><p><b>Dominio vs zona</b>: el dominio es el subárbol completo; la zona es la porción que administra una autoridad, <i>sin</i> lo que delegó. <b>NS en el padre</b>: es el padre el que dice «para udesa.edu.ar preguntale a tal servidor». <b>Glue</b>: si el servidor de udesa.edu.ar se llama ns1.udesa.edu.ar, para encontrar su IP habría que preguntarle… a él mismo; el padre rompe el círculo publicando su registro A. <b>Lame delegation</b>: delegación apuntando a un servidor que no es autoritativo (o está caído).</p></div></details>
+<h2 id="repc-smtp-pop-imap">SMTP, POP e IMAP</h2>
+<div class="cloze">
+<p class="tema">Comparativo · Unidad 4</p>
+<p>El correo electrónico combina un protocolo de envío con protocolos de acceso. Cuando Alicia aprieta «Enviar», su <input class="h" data-a="MUA" data-l="MUA"> le entrega el mensaje a su mailhost usando <input class="h" data-a="SMTP" data-l="SMTP"> sobre TCP, en el port <input class="h" data-a="25" data-l="25">. El mailhost consulta en el DNS el registro <input class="h" data-a="MX" data-l="MX"> del dominio de destino y, si hay varios, prueba primero el que tiene el valor de preferencia más <input class="h" data-a="bajo" data-l="bajo">. Después abre otra conexión SMTP con el servidor de destino, que guarda el mensaje en la <input class="h" data-a="mailbox|casilla|buzón|buzon" data-l="mailbox"> de Bruno. Bruno no puede recibir el correo directamente con SMTP, porque su computadora no está siempre <input class="h" data-a="conectada|encendida|prendida|online" data-l="conectado">; por eso su MUA va a buscar los mensajes con un protocolo de acceso. Con <input class="h" data-a="POP3|POP" data-l="POP3">, en el port 110, los mensajes se <input class="h" data-a="descargan|bajan" data-l="descargar"> al cliente y normalmente se borran del servidor, lo que sirve para quien usa un solo dispositivo. Con <input class="h" data-a="IMAP4|IMAP" data-l="IMAP4">, en el port <input class="h" data-a="143" data-l="143">, los mensajes <input class="h" data-a="permanecen|quedan|residen|siguen" data-l="permanecer"> en el servidor y el estado de cada uno (leído, carpeta) se <input class="h" data-a="sincroniza|sincronizan" data-l="sincronizar"> entre todos los dispositivos.</p>
+<p class="banco"><b>Ayuda:</b> 110, 143, 25, 53, 80, A, alto, bajo, borrar, conectado, descargar, desconectado, HTTP, IMAP4, mailbox, MIME, MTA, MUA, MX, permanecer, POP3, PTR, sincronizar, SMTP, SNMP, subir</p>
+</div>
+<details class="sol"><summary>Por qué (los huecos tramposos)</summary><div><p>Solo <b>SMTP</b> envía (MUA → mailhost y servidor → servidor, port 25). Para <i>leer</i> se usa <b>POP3 (110)</b> o <b>IMAP4 (143)</b>. <b>MX</b> con preferencia: gana el número <b>más bajo</b>. Diferencia clave POP/IMAP: POP3 descarga y borra (un dispositivo, offline); IMAP4 deja los mensajes en el servidor y sincroniza (varios dispositivos).</p></div></details>
+<h2 id="repc-circuitos-paquetes">Circuitos frente a paquetes, con números</h2>
+<div class="cloze">
+<p class="tema">Comparativo · Unidad 1</p>
+<p>Supongamos un enlace de 10 Mbps compartido por usuarios que, cuando transmiten, necesitan 1 Mbps cada uno, pero que solo están activos el 10 % del tiempo. Con conmutación de <input class="h" data-a="circuitos|circuito" data-l="circuito">, cada usuario recibe un canal <input class="h" data-a="dedicado|reservado" data-l="dedicado"> de 1 Mbps durante toda la sesión, lo use o no, de modo que el enlace admite como máximo <input class="h" data-a="10|diez" data-l="10"> usuarios; a cambio, el delay es bajo y el <input class="h" data-a="jitter" data-l="jitter"> es prácticamente nulo. Con conmutación de <input class="h" data-a="paquetes|paquete" data-l="paquete">, el enlace se reparte con multiplexado <input class="h" data-a="estadístico|estadistico|STDM" data-l="estadístico">: si se conectan 40 usuarios, en promedio solo están transmitiendo <input class="h" data-a="4|cuatro" data-l="4"> a la vez, lo que equivale a una carga media de <input class="h" data-a="4|cuatro" data-l="4"> Mbps, muy por debajo de la capacidad. Eso permite atender a <input class="h" data-a="más|mas" data-l="más"> usuarios con el mismo enlace, pero sin garantías: si coinciden muchos al mismo tiempo, los paquetes se acumulan en las <input class="h" data-a="colas|cola" data-l="cola"> de los nodos que hacen store and <input class="h" data-a="forward" data-l="forward">, el delay aumenta, y si la cola se llena, los paquetes se <input class="h" data-a="descartan|pierden|tiran" data-l="descartar">.</p>
+<p class="banco"><b>Ayuda:</b> 1, 10, 100, 4, 40, circuito, cola, compartido, dedicado, descartar, determinístico, estadístico, FDM, forward, jitter, más, menos, paquete, retransmitir, switch, TDM, throughput</p>
+</div>
+<details class="sol"><summary>Por qué (los huecos tramposos)</summary><div><p><b>Circuitos</b>: 10 Mbps / 1 Mbps por usuario = <b>10</b> usuarios, aunque estén callados el 90 % del tiempo. <b>Paquetes</b>: 40 usuarios × 10 % = <b>4</b> activos en promedio, 4 × 1 Mbps = <b>4</b> Mbps de carga media. El precio de compartir son las <b>colas</b>: más delay, más jitter y, si se llenan, <b>descarte</b>. Trampa: no confundas «40» (usuarios conectados) con los activos.</p></div></details>
+<h2 id="repc-cwnd">La ventana de congestión, RTT por RTT</h2>
+<div class="cloze">
+<p class="tema">Numérico · Unidad 8</p>
+<p>Una conexión TCP arranca con cwnd = 1 MSS y ssthresh = 16 MSS, con un MSS de 1000 bytes. Durante slow start la ventana se <input class="h" data-a="duplica|duplicaba" data-l="duplicar"> en cada RTT, porque cada ACK recibido le suma 1 MSS; así, al cabo de <input class="h" data-a="4|cuatro" data-l="4"> RTT sin pérdidas llega a 16 MSS, es decir, a <input class="h" data-a="16000|16.000" data-l="16000"> bytes. Al alcanzar el umbral, el crecimiento pasa a ser <input class="h" data-a="lineal" data-l="lineal">: congestion avoidance suma <input class="h" data-a="1|un|uno" data-l="1"> MSS por RTT, de modo que dos RTT más tarde la ventana vale <input class="h" data-a="18|dieciocho" data-l="18"> MSS. Si justo entonces vence el RTO, el emisor interpreta una congestión <input class="h" data-a="severa|grave" data-l="severo">, fija ssthresh en <input class="h" data-a="9|nueve" data-l="9"> MSS, baja cwnd a 1 MSS y vuelve a slow start; tardará <input class="h" data-a="3|tres" data-l="3"> RTT en volver a tener 8 MSS. Si, en cambio, la pérdida se hubiera detectado por tres ACKs <input class="h" data-a="duplicados|duplicado" data-l="duplicado">, Reno haría fast retransmit y fast <input class="h" data-a="recovery" data-l="recovery">: ssthresh también pasaría a valer 9, pero cwnd quedaría en <input class="h" data-a="9|nueve" data-l="9"> MSS y la conexión seguiría directamente en congestion <input class="h" data-a="avoidance" data-l="avoidance">, sin pasar por slow start.</p>
+<p class="banco"><b>Ayuda:</b> 0, 1, 128000, 160, 16000, 17, 18, 2, 3, 32, 4, 8, 9, avoidance, duplicado, duplicar, exponencial, lineal, recovery, retransmit, selectivo, severo, start, suave, triplicar</p>
+</div>
+<details class="sol"><summary>Por qué (los huecos tramposos)</summary><div><p>Slow start: 1 → 2 → 4 → 8 → 16 MSS: son <b>4</b> RTT. 16 MSS × 1000 B = <b>16000</b> bytes (128000 sería en bits). Desde ssthresh, congestion avoidance: +1 MSS por RTT → 17 → <b>18</b>. Timeout (Tahoe y Reno): ssthresh = 18/2 = <b>9</b>, cwnd = 1, y 1 → 2 → 4 → 8 son <b>3</b> RTT. Con 3 dup ACK (Reno, fast recovery): ssthresh = 9 y cwnd = ssthresh = <b>9</b>, sigue en congestion <b>avoidance</b>. El vencimiento del RTO se interpreta como congestión <b>severa</b>.</p></div></details>
+<h2 id="repc-bdp">Ventana, BDP y window scale</h2>
+<div class="cloze">
+<p class="tema">Numérico · Unidad 8</p>
+<p>Un enlace transcontinental tiene 125 Mbps de capacidad y un RTT de 64 ms. Su producto ancho de banda × retardo es de <input class="h" data-a="8|ocho" data-l="8"> Mbits, o sea un millón de bytes: esa es la cantidad de datos que tendría que poder estar en vuelo para aprovechar el canal al <input class="h" data-a="100|cien" data-l="100"> %. Pero el campo Window del header TCP tiene <input class="h" data-a="16|dieciséis|dieciseis" data-l="16"> bits, así que la awnd no puede superar los <input class="h" data-a="65535|65.535" data-l="65535"> bytes. Con esa ventana, el throughput queda limitado a W/RTT ≈ <input class="h" data-a="8|ocho" data-l="8"> Mbps, una pequeña fracción de la capacidad, porque el emisor pasa la mayor parte del tiempo <input class="h" data-a="esperando" data-l="esperar"> ACKs. A las redes cuyo BDP supera los 64 KiB se las llama <input class="h" data-a="LFN" data-l="LFN">, Long Fat Networks. La solución es la opción Window <input class="h" data-a="Scale" data-l="scale">, que se negocia durante el <input class="h" data-a="handshake|3-way handshake|three way handshake" data-l="handshake"> y multiplica la awnd por una potencia de <input class="h" data-a="2|dos" data-l="2">. Para este enlace hace falta multiplicar por al menos <input class="h" data-a="16|dieciséis|dieciseis" data-l="16">, es decir, usar un wndscale de <input class="h" data-a="4|cuatro" data-l="4">.</p>
+<p class="banco"><b>Ayuda:</b> 1, 10, 100, 125, 14, 16, 2, 3, 32, 32768, 4, 64, 65535, 8, 8000, esperar, handshake, LAN, LFN, MSS, scale, size, transmitir</p>
+</div>
+<details class="sol"><summary>Por qué (los huecos tramposos)</summary><div><p>BDP = 125·10⁶ b/s × 0,064 s = <b>8</b>·10⁶ bits = 10⁶ bytes (8000 sería olvidarse de pasar ms a s). La ventana de <b>16</b> bits llega a 2¹⁶ − 1 = <b>65535</b> bytes. Throughput = 65535 × 8 / 0,064 ≈ 8,2·10⁶ b/s ≈ <b>8</b> Mbps (el distractor «1» sale de olvidarse de pasar bytes a bits: ≈ 1 MB/s). Para cubrir 10⁶ bytes: 10⁶ / 65535 ≈ 15,3 → la próxima potencia de 2 es <b>16</b> = 2⁴ → wndscale = <b>4</b> (con 3, ×8 = 524 280 bytes: no alcanza).</p></div></details>
+<h2 id="repc-subred">Una dirección, su red y su ruta</h2>
+<div class="cloze">
+<p class="tema">Numérico · Unidad 1</p>
+<p>Una PC tiene configurada la dirección 172.16.45.200 con máscara /26. Esa notación indica que los primeros <input class="h" data-a="26|veintiséis|veintiseis" data-l="26"> bits son de red, así que quedan <input class="h" data-a="6|seis" data-l="6"> bits para el host, y la máscara en notación decimal es 255.255.255.<input class="h" data-a="192" data-l="192">. La dirección de red se obtiene con una operación <input class="h" data-a="AND" data-l="AND"> bit a bit entre la IP y la máscara, y da 172.16.45.<input class="h" data-a="192" data-l="192">; la de broadcast se obtiene con un <input class="h" data-a="OR" data-l="OR"> entre la IP y la máscara negada, y da 172.16.45.<input class="h" data-a="255" data-l="255">. El bloque tiene 2⁶ = 64 direcciones, pero dos de ellas no se asignan a interfaces, así que hay <input class="h" data-a="62|sesenta y dos" data-l="62"> hosts utilizables, de la .<input class="h" data-a="193" data-l="193"> a la .<input class="h" data-a="254" data-l="254">. Si un router tiene en su tabla una ruta a 172.16.45.0/24 y otra a 172.16.45.192/26, para el destino 172.16.45.200 matchean las dos, pero elige la segunda porque gana la de prefijo más <input class="h" data-a="largo|específico|especifico" data-l="largo">. Si no matcheara ninguna, usaría la ruta <input class="h" data-a="default|por defecto" data-l="default">, 0.0.0.0/<input class="h" data-a="0|cero" data-l="0">.</p>
+<p class="banco"><b>Ayuda:</b> 0, 1, 128, 191, 192, 193, 224, 24, 254, 255, 26, 32, 6, 62, 63, 64, 8, AND, corto, default, directo, largo, NOT, OR, XOR</p>
+</div>
+<details class="sol"><summary>Por qué (los huecos tramposos)</summary><div><p>/26 → 26 bits de red y 32 − 26 = <b>6</b> de host; el último octeto de la máscara es 11000000 = <b>192</b>. 200 = 11001000; 200 AND 192 = <b>192</b> → red 172.16.45.192. Broadcast: host en unos → 192 + 63 = <b>255</b>. Hosts = 2⁶ − 2 = <b>62</b> (64 es el error de olvidar red y broadcast), de .193 a .254. Longest prefix match: /26 es más <b>largo</b> (más específico) que /24. Default: 0.0.0.0/<b>0</b>, que matchea cualquier destino.</p></div></details>
+<h2 id="repc-sn-an">Números de secuencia con una pérdida</h2>
+<div class="cloze">
+<p class="tema">Numérico · Unidad 8</p>
+<p>Durante el 3-way handshake, el cliente eligió un ISN de 3000. Como el SYN <input class="h" data-a="consume|consumió|consumio" data-l="consumir"> un número de secuencia, el primer byte de datos del cliente lleva el número <input class="h" data-a="3001" data-l="3001">. El cliente manda tres segmentos de 500 bytes: el primero con SN = 3001, el segundo con SN = <input class="h" data-a="3501" data-l="3501"> y el tercero con SN = 4001. El segundo se pierde. Al recibir el primero, el servidor responde AN = 3501, porque el AN indica el <input class="h" data-a="próximo|proximo|siguiente" data-l="próximo"> byte que espera recibir. Cuando llega el tercero, fuera de secuencia, el servidor lo guarda en el buffer pero vuelve a responder AN = <input class="h" data-a="3501" data-l="3501">: es un ACK <input class="h" data-a="duplicado|repetido" data-l="duplicado">, ya que los ACK de TCP son <input class="h" data-a="acumulativos|acumulativo" data-l="acumulativo"> y no pueden confirmar el tercer segmento sin el segundo. El cliente, al no recibir la confirmación a tiempo, retransmite el segmento con SN = <input class="h" data-a="3501" data-l="3501">. Cuando ese segmento llega, el servidor ya tiene todo hasta el byte <input class="h" data-a="4500" data-l="4500"> y responde con AN = <input class="h" data-a="4501" data-l="4501">. Fijate que en ningún momento se numeraron segmentos: los SN avanzan de a <input class="h" data-a="500|quinientos" data-l="500"> porque lo que se numera son los <input class="h" data-a="bytes|octetos|byte" data-l="byte">.</p>
+<p class="banco"><b>Ayuda:</b> 1, 1500, 2, 3000, 3001, 3002, 3500, 3501, 4000, 4001, 4500, 4501, 500, 5001, acumulativo, anterior, byte, consumir, duplicado, próximo, segmento, selectivo</p>
+</div>
+<details class="sol"><summary>Por qué (los huecos tramposos)</summary><div><p>El SYN consume 1 → primer byte de datos = 3000 + 1 = <b>3001</b>. Segmentos de 500: SN = 3001, <b>3501</b>, 4001 (SN siguiente = SN + DL, no SN + 1). AN = próximo byte esperado; con el 2° perdido, todo lo que llegue después genera AN = <b>3501</b> (ACK <b>duplicado</b>, porque el AN es <b>acumulativo</b>). Al llegar la retransmisión, el receptor tiene 3001…<b>4500</b> → AN = <b>4501</b>. Error típico: poner 4500 como AN (el AN es el próximo, no el último recibido).</p></div></details>
+<h2 id="repc-ultimo-ack">Qué pasa si se pierde el último ACK del cierre</h2>
+<div class="cloze">
+<p class="tema">Qué pasa si · Unidad 8</p>
+<p>Supongamos que el cliente decide cerrar una conexión TCP. Envía un segmento con el flag <input class="h" data-a="FIN" data-l="FIN"> y pasa al estado FIN_WAIT_1; el servidor lo confirma con un ACK y entra en <input class="h" data-a="CLOSE_WAIT" data-l="CLOSE_WAIT">, porque todavía puede seguir enviando datos: el cierre es independiente en cada <input class="h" data-a="sentido|dirección|direccion" data-l="sentido">. Cuando la aplicación del servidor termina, el servidor envía su propio FIN y pasa a <input class="h" data-a="LAST_ACK" data-l="LAST_ACK"> a esperar la confirmación. El cliente responde con el último ACK y entra en <input class="h" data-a="TIME_WAIT" data-l="TIME_WAIT">. ¿Qué pasa si ese último ACK se pierde? Al servidor no le llega la confirmación, le vence el <input class="h" data-a="RTO" data-l="RTO"> y <input class="h" data-a="retransmite|reenvía|reenvia" data-l="retransmitir"> su FIN. Como el cliente sigue en TIME_WAIT —donde se queda el <input class="h" data-a="doble" data-l="doble"> del tiempo máximo de vida de un segmento, 2·MSL—, recibe ese FIN repetido y vuelve a mandar el ACK. Si el cliente hubiera pasado directamente a <input class="h" data-a="CLOSED" data-l="CLOSED">, el FIN retransmitido no encontraría a nadie esperándolo y el servidor no podría cerrar prolijamente. Por eso el cierre usa <input class="h" data-a="cuatro|4" data-l="4"> segmentos y no tres como la apertura.</p>
+<p class="banco"><b>Ayuda:</b> 3, 4, capa, CLOSE_WAIT, CLOSED, doble, ESTABLISHED, FIN, FIN_WAIT_2, ignorar, LAST_ACK, LISTEN, mitad, retransmitir, RST, RTO, RTT, sentido, SYN, SYN_RCVD, TIME_WAIT, triple</p>
+</div>
+<details class="sol"><summary>Por qué (los huecos tramposos)</summary><div><p>Secuencia de estados: cliente FIN_WAIT_1 → FIN_WAIT_2 → <b>TIME_WAIT</b>; servidor <b>CLOSE_WAIT</b> (puede seguir mandando: half-close, cada <b>sentido</b> se cierra por separado) → <b>LAST_ACK</b>. TIME_WAIT dura <b>2·MSL</b> justamente para poder re-confirmar un FIN retransmitido si el último ACK se perdió. El cierre son <b>4</b> segmentos porque el ACK del primer FIN y el FIN del otro lado no siempre pueden ir juntos.</p></div></details>
+<h2 id="repc-mtu">Qué pasa si el datagrama no entra en el MTU</h2>
+<div class="cloze">
+<p class="tema">Qué pasa si · Unidad 1</p>
+<p>Un host envía un datagrama IP de 4000 bytes, 20 de header y 3980 de datos, hacia una red Ethernet, cuyo MTU es de <input class="h" data-a="1500" data-l="1500"> bytes. Como no entra, IP lo <input class="h" data-a="fragmenta|divide" data-l="fragmentar">. Cada fragmento lleva su propio header IP, así que puede transportar como máximo 1480 bytes de datos, una cantidad que además es múltiplo de <input class="h" data-a="8|ocho" data-l="8">, como exige el campo Fragment Offset. Resultan <input class="h" data-a="3|tres" data-l="3"> fragmentos, con 1480, 1480 y <input class="h" data-a="1020" data-l="1020"> bytes de datos. Los tres llevan el mismo valor en el campo <input class="h" data-a="Identification|identificación|identificacion" data-l="identification">, para que el destino sepa que pertenecen al mismo datagrama; los dos primeros tienen el flag <input class="h" data-a="MF|more fragments" data-l="MF"> en 1, y el offset del segundo vale <input class="h" data-a="185" data-l="185">. La fragmentación puede hacerla el host origen o un <input class="h" data-a="router" data-l="router"> del camino, pero el reensamblado se hace únicamente en el <input class="h" data-a="destino" data-l="destino">. Si un fragmento se pierde, vence el reassembly <input class="h" data-a="timer|temporizador" data-l="timer"> y se descarta el datagrama entero. Además, como solo el <input class="h" data-a="primer|primero" data-l="primero"> fragmento lleva el header TCP o UDP, los demás no tienen ports a la vista.</p>
+<p class="banco"><b>Ayuda:</b> 1000, 1020, 1480, 1500, 185, 186, 2, 3, 370, 4, 576, 8, checksum, destino, DF, ensamblar, fragmentar, identification, MF, origen, primero, router, switch, timer, TTL, último</p>
+</div>
+<details class="sol"><summary>Por qué (los huecos tramposos)</summary><div><p>Datos por fragmento: 1500 − 20 = 1480 (múltiplo de <b>8</b>). 3980 = 1480 + 1480 + <b>1020</b> → <b>3</b> fragmentos. Offsets en unidades de 8 bytes: 0, 1480/8 = <b>185</b> y 2960/8 = 370 (370 es el del tercero: es el distractor). Todos comparten <b>Identification</b>; <b>MF</b> = 1 en todos menos el último. Fragmenta el origen o un <b>router</b>; reensambla solo el <b>destino</b>. Solo el <b>primer</b> fragmento lleva los ports.</p></div></details>
+<div class="cloze-total"></div>
+</section>
+
     </div>
   </main>
 </div>
@@ -8945,7 +9540,9 @@ function norm(s){
   var ins = [].slice.call(c.querySelectorAll('input.h'));
   ins.forEach(function(i){
     var a = i.getAttribute('data-a').split('|')[0];
-    i.setAttribute('size', Math.max(5, a.length + 2));
+    var sec = i.closest('section');
+    var ciego = sec && /^rep/.test(sec.id);   // repaso: ancho fijo, que el largo no delate la respuesta
+    i.setAttribute('size', ciego ? 13 : Math.max(5, a.length + 2));
     i.setAttribute('autocomplete', 'off'); i.setAttribute('spellcheck', 'false');
     i.addEventListener('input', function(){ i.classList.remove('ok','mal','rev'); });
   });
@@ -8979,6 +9576,23 @@ function norm(s){
   t.addEventListener('click', function(e){
     var k = e.target.getAttribute('data-k'); if (k === null) return;
     [].forEach.call(g.querySelectorAll('details.qa'), function(d){ d.open = k === '1'; });
+  });
+});
+
+// ---------- corregir todo un simulacro (repaso) ----------
+[].forEach.call(document.querySelectorAll('.cloze-total'), function(t){
+  var sec = t.closest('section') || document;
+  t.innerHTML = '<button class="prim" data-k="c">Corregir todo</button><button data-k="l">Limpiar todo</button><span class="score"></span>';
+  var score = t.querySelector('.score');
+  t.addEventListener('click', function(e){
+    var k = e.target.getAttribute('data-k'); if (!k) return;
+    [].forEach.call(sec.querySelectorAll('.cloze .acciones button[data-k="' + k + '"]'), function(b){ b.click(); });
+    if (k === 'c'){
+      var tot = sec.querySelectorAll('.cloze input.h').length;
+      var ok = sec.querySelectorAll('.cloze input.h.ok').length;
+      var pct = tot ? Math.round(ok / tot * 100) : 0;
+      score.textContent = ok + ' / ' + tot + ' huecos · ' + pct + ' %';
+    } else score.textContent = '';
   });
 });
 </script>
