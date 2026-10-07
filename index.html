@@ -333,7 +333,7 @@ svg.dib{max-width:100%; height:auto}
         aprender desde cero, con las palabras de la cátedra y práctica en el formato del examen.</p>
         <ul class="chips">
           <li>20 partes</li><li>87 simulacros de completar</li>
-          <li>1094 huecos autocorregibles</li><li>237 preguntas de repaso</li>
+          <li>1094 huecos autocorregibles</li><li>238 preguntas de repaso</li>
           <li>84 ejercicios resueltos</li>
         </ul>
         <div class="reglas">
@@ -5062,6 +5062,20 @@ bajar el TTL unos días antes.</li>
 <li>En la caché, el TTL <b>va bajando</b> con el tiempo. Si consultás dos veces el mismo nombre, la segunda respuesta trae un TTL menor.</li>
 <li>Lo que sale de la caché es, por definición, <b>no autoritativo</b>.</li>
 </ul>
+<div class="caja trampa"><p class="caja-tit">Trampa · «si respondió de la caché, entonces fue iterativa»</p>
+<p>No. <b>Recursiva o iterativa</b> describe <b>qué pide el cliente y cómo responde el servidor</b>, no de dónde sale el dato.
+Tu PC le hace al servidor local una consulta <b>recursiva</b> (RD = 1: «traeme la respuesta final»). Si el local la tiene en
+caché, te la da directamente: la consulta <b>sigue siendo recursiva</b>, solo que el servidor no tuvo que salir a buscar nada.</p>
+<p>Lo que cambia con la caché son dos cosas:</p>
+<ul>
+<li>La respuesta es <b>no autoritativa</b> (AA = 0), porque es una copia y no viene del dueño de la zona.</li>
+<li>Se <b>ahorran las consultas iterativas</b> que el local les haría a los root, a los TLD y a los servidores autoritativos. Con caché
+parcial (por ejemplo, conoce los NS de <code>ar</code>) se ahorra solo una parte: arranca la recorrida desde el TLD.</li>
+</ul>
+<p>Son dos ejes independientes: <b>RD</b> dice si se pidió recursión y <b>AA</b> dice si la respuesta es autoritativa. Una
+respuesta con RD = 1, RA = 1 y AA = 0 (la del ejercicio 6 de la guía, en el <a href="#e9">taller DNS</a>) se lee así: fue
+recursiva, el servidor hace recursión y la respuesta salió de una caché. Iterativa sería que el servidor te contestara con
+una <b>referencia</b> («no sé, preguntale a estos NS») y que vos siguieras el camino.</p></div>
 
 <h2 id="u3-mensajes">El mensaje DNS por dentro</h2>
 <p>Ahora que se entiende qué tiene que poder decir una consulta y una respuesta, el formato del mensaje se explica solo. Las
@@ -5301,6 +5315,7 @@ Additional (RRs extra útiles, como las A de esos NS, es decir, el glue).</p></d
 
 <h3 id="u3-q-dist">Sistema distribuido</h3>
 <div class="qa-grupo">
+<details class="qa"><summary>Si el servidor DNS local responde desde su caché, ¿la consulta fue iterativa?</summary><div><p>No. La consulta del cliente al local sigue siendo <b>recursiva</b> (RD = 1). La caché solo hace que la respuesta sea <b>no autoritativa</b> (AA = 0) y que el local se ahorre las consultas iterativas a root, TLD y autoritativos. Recursiva/iterativa (RD) y autoritativa/no (AA) son ejes independientes. Ver <a href="#u3-cache">la caché y el TTL</a>.</p></div></details>
 <details class="qa"><summary>¿Cuáles son los distintos tipos de nodos DNS?</summary><div>
 <p><b>NR</b> (Name Resolver, el cliente) y <b>NS</b> (Name Server). Entre los NS: los autoritativos (<b>Primary</b> y <b>Secondary</b>) y los
 <b>recursive and caching-only</b>. Por nivel: root, TLD y dominio.</p></div></details>
