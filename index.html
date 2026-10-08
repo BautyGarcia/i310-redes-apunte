@@ -391,6 +391,12 @@ section[id^="repm"] .cloze.practico, section[id^="repm"] .enunciado{position:rel
 .banco.fichas{display:flex; flex-wrap:wrap; gap:5px 6px; align-items:center}
 .banco.fichas b{margin-right:4px}
 .banco .ficha{display:inline-block; padding:1px 8px; border:1px solid var(--rule-2); border-radius:4px; background:var(--cloze-bg); color:var(--ink); white-space:nowrap}
+/* recuadros de la captura de Wireshark: siempre fondo claro y texto oscuro (también en modo oscuro y con foco) */
+table.ws input.h, table.ws input.h:focus{background:#fbfdf6!important; color:#1b2a10!important; border:1px solid #9fb38a; border-radius:3px; padding:0 3px}
+table.ws input.h:focus{outline:2px solid #4a7a2a; outline-offset:0}
+table.ws input.h.ok{color:#1e6b3a!important; border-color:#1e6b3a; font-weight:600}
+table.ws input.h.mal{color:#a5321d!important; border-color:#a5321d}
+table.ws input.h.rev{color:#7a5200!important; border-color:#b07a00; font-style:italic}
 </style></head><body>
 <div id="prog"></div>
 <div class="shell">
